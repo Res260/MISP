@@ -3,10 +3,89 @@ body {
 	font-size: 12px;
 }
 
+.btn-inverse {
+    color: #ffffff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-color: #363636;
+    background-image: -moz-linear-gradient(top, #444444, #222222);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#444444), to(#222222));
+    background-image: -webkit-linear-gradient(top, #444444, #222222);
+    background-image: -o-linear-gradient(top, #444444, #222222);
+    background-image: linear-gradient(to bottom, #444444, #222222);
+    background-repeat: repeat-x;
+    border-color: #222222 #222222 #000000;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+}
+
+.nav-list > .active > a,
+.nav-list > .active > a:hover,
+.nav-list > .active > a:focus,
+#sideMenu .active > a,
+#sideMenu .active > a:hover,
+#sideMenu .active > a:focus{
+	color: #ffffff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+    background-color: #0088cc;
+}
+
+/*=== topbar ===*/
+
 #topBar {
-	 height:42px;
-	 width:100%;
-	 min-width:1300px;
+	height:42px;
+	width:100%;
+	min-width:1300px;
+}
+
+#topBar .navbar {
+	border-radius: 0;
+	min-height: auto;
+	max-height: 42px;
+}
+
+.navbar-inner {
+	padding: 1px 20px;
+	background-image: linear-gradient(to bottom, #222222, #111111);
+}
+
+#topBar .nav>li:not(.divider) {
+	display: inline-block;
+}
+
+#topBar .nav>li>a {
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    color: #999;
+}
+
+#topBar .nav>li>a:hover, 
+#topBar .nav>li>a:focus {
+	color: white;
+	background-color: transparent;
+}
+
+#topBar .navbar-inner > div {
+	display: inline-block;
+}
+
+#topBar .dropdown-menu>li {
+	display: inline;
+}
+
+#topNavRightSectionNav {
+	display: flex;
+}
+
+/* ===sidemenu=== */
+#sideMenu {
+	height: 100vh;
+	border-right: 1px solid black;
+	width: 195px;
+}
+
+.sideMenu .nav .divider {
+	height: 1px;
+    margin: 9px 0;
+    overflow: hidden;
+    background-color: #e5e5e5;
 }
 
 input[type="file"] {
@@ -39,10 +118,6 @@ pre {
 }
 .nav-list {
 	padding-right: 5px;
-}
-
-.nav-list > li > a {
-	margin-right: -30px;
 }
 
 .navbar-lab .navbar-inner{
@@ -158,8 +233,7 @@ div.form,
 div.index,
 div.view {
   float:right;
-  width:calc(100% - 216px);
-  border-left:1px solid #666;
+  width:calc(100% - 195px);
   padding:0px 10px;
   padding-bottom:40px;
 }
@@ -444,7 +518,7 @@ dd {
 
 .debugOff-layout {
 	position:fixed;
-	padding-top:50px;
+	padding-top:42px;
 	width:98%;
 }
 
@@ -465,6 +539,7 @@ dd {
 }
 
 #footerContainer {
+	border-radius: 0;
 	z-index: 20;
 	position:relative;
 }
@@ -479,6 +554,7 @@ dd {
 }
 
 #triangle {
+	cursor: pointer;
 	position:fixed;
 	background-color: #1b1b1b;
 	width: 20px;
@@ -551,7 +627,6 @@ dd {
 
 .footerCenterText {
 	padding-top:12px;
-	position: absolute;
 	width:100%;
 	text-align:center;
 	z-index:1;
@@ -1186,7 +1261,7 @@ a.proposal_link_red:hover {
 	background-color: #f9f9f9 !important;
 }
 
-.tabMenu [class^="icon-"] {
+.tabMenu [class^="glyphicon glyphicon-"] {
 	vertical-align:baseline;
 	margin-top:3px;
 }

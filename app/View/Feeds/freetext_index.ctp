@@ -14,7 +14,7 @@
 					$url = array_merge(array('controller' => 'feeds', 'action' => 'previewIndex', $feed['Feed']['id']), $this->request->named);
 					$this->Paginator->options(array(
 							'url' => $url,
-							'update' => '.span12',
+							'update' => '.col-md-12',
 							'evalScripts' => true,
 							'before' => '$(".progress").show()',
 							'complete' => '$(".progress").hide()',
@@ -45,7 +45,7 @@
 		<td class="short" id="<?php echo h($key);?>_category"><?php echo h($attribute['category']);?></td>
 		<td class="short" id="<?php echo h($key);?>_type"><?php echo h($attribute['default_type']);?></td>
 		<td id="<?php echo h($key);?>_value"><?php echo h($attribute['value']);?></td>
-		<td class="short" id="<?php echo h($key);?>_to_ids" data-value="<?php echo h($attribute['to_ids']); ?>"><span class="icon-<?php echo $attribute['to_ids'] ? 'ok' : 'remove';?>"></span></td>
+		<td class="short" id="<?php echo h($key);?>_to_ids" data-value="<?php echo h($attribute['to_ids']); ?>"><span class="glyphicon glyphicon-<?php echo $attribute['to_ids'] ? 'ok' : 'remove';?>"></span></td>
 		<td class="shortish">
 			<?php
 				if (isset($attribute['correlations'])):
@@ -78,7 +78,7 @@
 			<?php
 				$this->Paginator->options(array(
 						'url' => $url,
-						'update' => '.span12',
+						'update' => '.col-md-12',
 						'evalScripts' => true,
 						'before' => '$(".progress").show()',
 						'complete' => '$(".progress").hide()',

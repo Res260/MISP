@@ -14,7 +14,7 @@
 		<dd>
 			<?php
 				if ($f !== 'active') echo h($sg['SharingGroup'][$f]);
-				else echo '<span class="' . ($sg['SharingGroup'][$f] ? 'icon-ok' : 'icon-remove') . '"></span>';
+				else echo '<span class="' . ($sg['SharingGroup'][$f] ? 'glyphicon glyphicon-ok' : 'glyphicon glyphicon-remove') . '"></span>';
 			?>&nbsp;
 		</dd>
 		<?php
@@ -35,7 +35,7 @@
 	<?php
 		if (isset($sg['SharingGroupOrg'])):
 	?>
-		<div class="span6">
+		<div class="col-md-6">
 		<b><?php echo __('Organisations');?></b>
 			<table class="table table-striped table-hover table-condensed">
 				<tr>
@@ -48,8 +48,8 @@
 				?>
 				<tr>
 					<td><a href="/organisations/view/<?php echo h($sgo['Organisation']['id']); ?>"><?php echo h($sgo['Organisation']['name']); ?></a></td>
-					<td><span class="<?php echo ($sgo['Organisation']['local'] ? 'icon-ok' : 'icon-remove'); ?>"></span></td>
-					<td><span class="<?php echo ($sgo['extend'] ? 'icon-ok' : 'icon-remove'); ?>"></span></td>
+					<td><span class="<?php echo ($sgo['Organisation']['local'] ? 'glyphicon glyphicon-ok' : 'glyphicon glyphicon-remove'); ?>"></span></td>
+					<td><span class="<?php echo ($sgo['extend'] ? 'glyphicon glyphicon-ok' : 'glyphicon glyphicon-remove'); ?>"></span></td>
 				</tr>
 				<?php
 					endforeach;
@@ -60,7 +60,7 @@
 		endif;
 		if (!$sg['SharingGroup']['roaming']):
 	?>
-		<div class="span6">
+		<div class="col-md-6">
 		<b>Instances</b>
 			<table class="table table-striped table-hover table-condensed">
 				<tr>
@@ -73,7 +73,7 @@
 				<tr>
 					<td><?php echo h($sgs['Server']['name']); ?></td>
 					<td><?php echo h($sgs['Server']['url']); ?></td>
-					<td><span class="<?php echo ($sgs['all_orgs'] ? 'icon-ok' : 'icon-remove'); ?>"></span></td>
+					<td><span class="<?php echo ($sgs['all_orgs'] ? 'glyphicon glyphicon-ok' : 'glyphicon glyphicon-remove'); ?>"></span></td>
 				</tr>
 				<?php
 						endforeach;

@@ -4,7 +4,7 @@
 		<ul>
 		<?php
 			$this->Paginator->options(array(
-				'update' => '.span12',
+				'update' => '.col-md-12',
 				'evalScripts' => true,
 				'before' => '$(".progress").show()',
 				'complete' => '$(".progress").hide()',
@@ -27,8 +27,8 @@
 	?>
 	<div class="tabMenuFixedContainer" style="display:inline-block;">
 		<span class="tabMenuFixed tabMenuFixed<?php echo $tab; ?> tabMenuSides">
-			<span role="button" tabindex="0" aria-label="<?php echo __('Modify filters');?>" id="create-button" title="<?php echo __('Modify filters');?>" class="icon-search useCursorPointer" title="Filter events" role="button" tabindex="0" aria-label="<?php echo __('Filter events');?>" onClick="getPopup('<?php echo h($urlparams);?>', 'events', 'filterEventIndex');"></span>
-			<span id="multi-delete-button" title="<?php echo __('Delete selected Events');?>" role="button" tabindex="0" aria-label="<?php echo __('Delete selected Events');?>" class="hidden icon-trash mass-select useCursorPointer" onClick="multiSelectDeleteEvents();"></span>
+			<span role="button" tabindex="0" aria-label="<?php echo __('Modify filters');?>" id="create-button" title="<?php echo __('Modify filters');?>" class="glyphicon glyphicon-search useCursorPointer" title="Filter events" role="button" tabindex="0" aria-label="<?php echo __('Filter events');?>" onClick="getPopup('<?php echo h($urlparams);?>', 'events', 'filterEventIndex');"></span>
+			<span id="multi-delete-button" title="<?php echo __('Delete selected Events');?>" role="button" tabindex="0" aria-label="<?php echo __('Delete selected Events');?>" class="hidden glyphicon glyphicon-trash mass-select useCursorPointer" onClick="multiSelectDeleteEvents();"></span>
 		</span>
 		<?php
 			if ($filtered):
@@ -38,7 +38,7 @@
 					</span>
 				<?php endforeach; ?>
 			<span class="tabMenuFixed tabMenuFixedRight tabMenuSides">
-				<?php echo $this->Html->link('', array('controller' => 'events', 'action' => 'index'), array('class' => 'icon-remove', 'title' => __('Remove filters')));?>
+				<?php echo $this->Html->link('', array('controller' => 'events', 'action' => 'index'), array('class' => 'glyphicon glyphicon-remove', 'title' => __('Remove filters')));?>
 			</span>
 			<?php endif;?>
 			<span role="button" tabindex="0" aria-label="<?php echo __('Quickfilter');?>" title="<?php echo __('Quickfilter');?>" id="quickFilterButton" class="tabMenuFilterFieldButton useCursorPointer" onClick="quickFilter(<?php echo h($passedArgs); ?>, '<?php echo $baseurl . '/events/index'; ?>');"><?php echo __('Filter');?></span>

@@ -19,7 +19,7 @@
 		<ul>
 		<?php
 		$this->Paginator->options(array(
-			'update' => '.span12',
+			'update' => '.col-md-12',
 			'evalScripts' => true,
 			'before' => '$(".progress").show()',
 			'complete' => '$(".progress").hide()',
@@ -144,15 +144,15 @@ foreach ($attributes as $attribute):
 	<?php
 		if ($isSiteAdmin || ($isAclModify && $attribute['Event']['user_id'] == $me['id']) || ($isAclModifyOrg && $attribute['Event']['org_id'] == $me['org_id'])):
 	?>
-			<a href="<?php echo $baseurl;?>/attributes/edit/<?php echo $attribute['Attribute']['id'];?>" class="icon-edit" title="Edit"></a><?php
-			echo $this->Form->postLink('',array('action' => 'delete', $attribute['Attribute']['id']), array('class' => 'icon-trash', 'title' => 'Delete'), __('Are you sure you want to delete this attribute?'));
+			<a href="<?php echo $baseurl;?>/attributes/edit/<?php echo $attribute['Attribute']['id'];?>" class="glyphicon glyphicon-edit" title="Edit"></a><?php
+			echo $this->Form->postLink('',array('action' => 'delete', $attribute['Attribute']['id']), array('class' => 'glyphicon glyphicon-trash', 'title' => 'Delete'), __('Are you sure you want to delete this attribute?'));
 		elseif ($isAclModify):
 	?>
-			<a href="<?php echo $baseurl;?>/shadow_attributes/edit/<?php echo $attribute['Attribute']['id'];?>" class="icon-share" title="<?php echo __('Propose an edit'); ?>"></a>
+			<a href="<?php echo $baseurl;?>/shadow_attributes/edit/<?php echo $attribute['Attribute']['id'];?>" class="glyphicon glyphicon-share" title="<?php echo __('Propose an edit'); ?>"></a>
 	<?php
 		endif;
 	?>
-			<a href="<?php echo $baseurl;?>/events/view/<?php echo $attribute['Attribute']['event_id'];?>" class="icon-list-alt" title="<?php echo __('View'); ?>"></a>
+			<a href="<?php echo $baseurl;?>/events/view/<?php echo $attribute['Attribute']['event_id'];?>" class="glyphicon glyphicon-list-alt" title="<?php echo __('View'); ?>"></a>
 		</td>
 	</tr>
 	<?php

@@ -12,18 +12,18 @@
 		echo $this->Form->input('name', array(
 				'div' => 'input clear',
 				'placeholder' => __('Feed name'),
-				'class' => 'form-control span6',
+				'class' => 'form-control col-md-6',
 		));
 		echo $this->Form->input('provider', array(
 				'div' => 'input clear',
 				'placeholder' => __('Name of the content provider'),
-				'class' => 'form-control span6'
+				'class' => 'form-control col-md-6'
 		));
 		echo $this->Form->input('input_source', array(
 				'label' => __('Source Format'),
 				'div' => 'input clear',
 				'options' => array('network' => 'Network', 'local' => 'Local'),
-				'class' => 'form-control span6'
+				'class' => 'form-control col-md-6'
 		));
 		?>
 		<div class="input clear"></div>
@@ -39,13 +39,13 @@
 		echo $this->Form->input('url', array(
 				'div' => 'input clear',
 				'placeholder' => __('URL of the feed'),
-				'class' => 'form-control span6'
+				'class' => 'form-control col-md-6'
 		));
 		echo $this->Form->input('source_format', array(
 				'label' => __('Source Format'),
 				'div' => 'input clear',
 				'options' => $feed_types,
-				'class' => 'form-control span6'
+				'class' => 'form-control col-md-6'
 		));
 	?>
 		<div id="HeadersDiv">
@@ -81,7 +81,7 @@
 				'label' => __('Target Event'),
 				'div' => 'input clear',
 				'options' => array('New Event Each Pull', 'Fixed Event'),
-				'class' => 'form-control span6'
+				'class' => 'form-control col-md-6'
 		));
 	?>
 		</div>
@@ -91,7 +91,7 @@
 				'label' => __('Target Event ID'),
 				'div' => 'input clear',
 				'placeholder' => __('Leave blank unless you want to reuse an existing event.'),
-				'class' => 'form-control span6'
+				'class' => 'form-control col-md-6'
 		));
 	?>
 		</div>
@@ -102,7 +102,7 @@
 						'title' => __('Select one or several fields that should be parsed by the CSV parser and converted into MISP attributes'),
 						'div' => 'input clear',
 						'placeholder' => __('2,3,4 (column position separated by commas)'),
-						'class' => 'form-control span6'
+						'class' => 'form-control col-md-6'
 				));
 			?>
 		</div>
@@ -113,7 +113,7 @@
 						'title' => __('Set the default CSV delimiter (default = ",")'),
 						'div' => 'input clear',
 						'placeholder' => ',',
-						'class' => 'form-control span6',
+						'class' => 'form-control col-md-6',
 						'value' => ','
 				));
 			?>
@@ -125,7 +125,7 @@
 						'title' => __('Add a regex pattern for detecting iocs that should be skipped (this can be useful to exclude any references to the actual report / feed for example)'),
 						'div' => 'input clear',
 						'placeholder' => __('Regex pattern, for example: "/^https://myfeedurl/i'),
-						'class' => 'form-control span6'
+						'class' => 'form-control col-md-6'
 				));
 			?>
 		</div>

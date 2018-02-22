@@ -4,7 +4,7 @@
 		<ul>
 		<?php
 		$this->Paginator->options(array(
-			'update' => '.span12',
+			'update' => '.col-md-12',
 			'evalScripts' => true,
 			'before' => '$(".progress").show()',
 			'complete' => '$(".progress").hide()',
@@ -52,8 +52,8 @@ foreach ($warninglists as $k => $item): ?>
 		</td>
 		<?php endif;?>
 		<td class="short action-links">
-			<a href='<?php echo $baseurl."/warninglists/view/". h($item['Warninglist']['id']);?>' class = "icon-list-alt" title = "<?php echo __('View');?>"></a>
-			<span class="icon-trash useCursorPointer" title="<?php echo __('Delete Warninglist');?>" role="button" tabindex="0" aria-label="<?php echo __('Delete warninglist');?>" onClick="deleteObject('warninglists', 'delete', '<?php echo h($item['Warninglist']['id']); ?>', '<?php echo h($item['Warninglist']['id']); ?>');"></span>
+			<a href='<?php echo $baseurl."/warninglists/view/". h($item['Warninglist']['id']);?>' class = "glyphicon glyphicon-list-alt" title = "<?php echo __('View');?>"></a>
+			<span class="glyphicon glyphicon-trash useCursorPointer" title="<?php echo __('Delete Warninglist');?>" role="button" tabindex="0" aria-label="<?php echo __('Delete warninglist');?>" onClick="deleteObject('warninglists', 'delete', '<?php echo h($item['Warninglist']['id']); ?>', '<?php echo h($item['Warninglist']['id']); ?>');"></span>
 		</td>
 	</tr><?php
 endforeach; ?>

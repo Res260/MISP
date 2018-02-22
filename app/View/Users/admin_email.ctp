@@ -18,19 +18,19 @@
 		$actionOptions=array(__('Custom message'), __('Welcome message'), __('Reset password'));
 		$recipientOptions=array(__('A single user'), __('All users'));
 		?>
-		<div class="row-fluid">
+		<div class="row">
 			<?php echo $this->Form->input('action', array('type' => 'select', 'options' => $actionOptions, 'id' => 'action')); ?>
 			<div id="subject">
 				<?php echo $this->Form->input('subject', array('type' => 'text', 'label' => __('Subject'), 'style' => 'width:400px;')); ?>
 			</div>
 		</div>
-		<div class="row-fluid">
+		<div class="row">
 			<?php echo $this->Form->input('recipient', array('type' => 'select', 'options' => $recipientOptions, 'id' => 'recipient'));	?>
 			<div id="recipientEmailList" class="hideAble">
 				<?php echo $this->Form->input('recipientEmailList', array('type' => 'select', 'options' => $recipientEmail, 'label' => 'Recipient Email')); ?>
 			</div>
 		</div>
-		<div id="customMessage" class="row-fluid hideAble">
+		<div id="customMessage" class="row hideAble">
 			<?php
 			echo $this->Form->input('customMessage', array(
 				'label' => __('Enter a custom message'),
@@ -39,14 +39,14 @@
 			));
 			?>
 		</div>
-		<div class="row-fluid">
+		<div class="row">
 			<div id="messageDiv" class="messageDiv hideAble">
 				<?php
 				echo $this->Form->input('message', array('type' => 'textarea', 'class' => 'input-xxlarge'));
 				?>
 			</div>
 		</div>
-		<div class="row-fluid">
+		<div class="row">
 			<?php
 			echo $this->Form->button(__('Submit'), array('class' => 'btn btn-primary'));
 			echo $this->Form->end();

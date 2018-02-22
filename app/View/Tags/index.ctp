@@ -12,7 +12,7 @@
 		<ul>
 		<?php
 		$this->Paginator->options(array(
-			'update' => '.span12',
+			'update' => '.col-md-12',
 			'evalScripts' => true,
 			'before' => '$(".progress").show()',
 			'complete' => '$(".progress").hide()',
@@ -49,7 +49,7 @@
 				</span>
 			<?php endforeach; ?>
 			<span class="tabMenuFixed tabMenuFixedRight tabMenuSides">
-				<?php echo $this->Html->link('', array('controller' => 'tags', 'action' => 'index'), array('class' => 'icon-remove', 'title' => __('Remove filters')));?>
+				<?php echo $this->Html->link('', array('controller' => 'tags', 'action' => 'index'), array('class' => 'glyphicon glyphicon-remove', 'title' => __('Remove filters')));?>
 			</span>
 		<?php endif;?>
 		<span style="border-right:0px !important;">
@@ -79,8 +79,8 @@
 foreach ($list as $k => $item): ?>
 	<tr>
 		<td class="short"><?php echo h($item['Tag']['id']); ?>&nbsp;</td>
-		<td class="short"><span class="<?php echo ($item['Tag']['exportable'] ? 'icon-ok' : 'icon-remove'); ?>"></span></td>
-		<td class="short"><span class="icon-<?php echo $item['Tag']['hide_tag'] ? 'ok' : 'remove'; ?>"></span></td>
+		<td class="short"><span class="<?php echo ($item['Tag']['exportable'] ? 'glyphicon glyphicon-ok' : 'glyphicon glyphicon-remove'); ?>"></span></td>
+		<td class="short"><span class="glyphicon glyphicon-<?php echo $item['Tag']['hide_tag'] ? 'ok' : 'remove'; ?>"></span></td>
 		<td><a href="<?php echo $baseurl . "/events/index/searchtag:" . $item['Tag']['id']; ?>" class="tag" style="background-color: <?php echo h($item['Tag']['colour']); ?>;color:<?php echo $this->TextColour->getTextColour($item['Tag']['colour']); ?>" title="<?php echo isset($item['Tag']['Taxonomy']['expanded']) ? h($item['Tag']['Taxonomy']['expanded']) : h($item['Tag']['name']); ?>"><?php echo h($item['Tag']['name']); ?></a></td>
 		<td class="short">
 			<?php if ($item['Tag']['org_id']): ?>
@@ -121,8 +121,8 @@ foreach ($list as $k => $item): ?>
 		<?php if ($isSiteAdmin): ?>
 		<td class="short action-links">
 			<?php echo $this->Html->link('', array('controller' => 'tags', 'action' => 'viewGraph', $item['Tag']['id']), array('class' => 'fa fa-share-alt', 'title' => 'View graph'));?>
-			<?php echo $this->Html->link('', array('action' => 'edit', $item['Tag']['id']), array('class' => 'icon-edit', 'title' => 'Edit'));?>
-			<?php echo $this->Form->postLink('', array('action' => 'delete', $item['Tag']['id']), array('class' => 'icon-trash', 'title' => __('Delete')), __('Are you sure you want to delete "%s"?', $item['Tag']['name']));?>
+			<?php echo $this->Html->link('', array('action' => 'edit', $item['Tag']['id']), array('class' => 'glyphicon glyphicon-edit', 'title' => 'Edit'));?>
+			<?php echo $this->Form->postLink('', array('action' => 'delete', $item['Tag']['id']), array('class' => 'glyphicon glyphicon-trash', 'title' => __('Delete')), __('Are you sure you want to delete "%s"?', $item['Tag']['name']));?>
 		</td>
 		<?php endif; ?>
 	</tr><?php

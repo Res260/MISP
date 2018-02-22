@@ -4,7 +4,7 @@
 <ul>
 <?php
 	$this->Paginator->options(array(
-			'update' => '.span12',
+			'update' => '.col-md-12',
 			'evalScripts' => true,
 			'before' => '$(".progress").show()',
 			'complete' => '$(".progress").hide()',
@@ -64,10 +64,10 @@ foreach ($sharingGroups as $k => $sharingGroup):
 		</td>
 		<td class="action">
 		<?php if ($isSiteAdmin || $sharingGroup['editable']): ?>
-			<?php echo $this->Html->link('', '/SharingGroups/edit/' . $sharingGroup['SharingGroup']['id'], array('class' => 'icon-edit', 'title' => 'Edit')); ?>
-			<?php echo $this->Form->postLink('', '/SharingGroups/delete/' . $sharingGroup['SharingGroup']['id'], array('class' => 'icon-trash', 'title' => 'Delete'), __('Are you sure you want to delete %s?', h($sharingGroup['SharingGroup']['name']))); ?>
+			<?php echo $this->Html->link('', '/SharingGroups/edit/' . $sharingGroup['SharingGroup']['id'], array('class' => 'glyphicon glyphicon-edit', 'title' => 'Edit')); ?>
+			<?php echo $this->Form->postLink('', '/SharingGroups/delete/' . $sharingGroup['SharingGroup']['id'], array('class' => 'glyphicon glyphicon-trash', 'title' => 'Delete'), __('Are you sure you want to delete %s?', h($sharingGroup['SharingGroup']['name']))); ?>
 		<?php endif; ?>
-			<a href="/sharing_groups/view/<?php echo $sharingGroup['SharingGroup']['id']; ?>" class="icon-list-alt"></a>
+			<a href="/sharing_groups/view/<?php echo $sharingGroup['SharingGroup']['id']; ?>" class="glyphicon glyphicon-list-alt"></a>
 		</td>
 	</tr>
 	<?php

@@ -11,7 +11,7 @@
 		<ul>
 		<?php
 		$this->Paginator->options(array(
-			'update' => '.span12',
+			'update' => '.col-md-12',
 			'evalScripts' => true,
 			'before' => '$(".progress").show()',
 			'complete' => '$(".progress").hide()',
@@ -96,7 +96,7 @@ foreach ($feeds as $item):
 		?>
 		<td class="short"><?php echo h($item['Feed']['id']); ?>&nbsp;</td>
 		<td class="short">
-			<span class="<?php echo ($item['Feed']['enabled'] ? 'icon-ok' : 'icon-remove'); ?>"></span>
+			<span class="<?php echo ($item['Feed']['enabled'] ? 'glyphicon glyphicon-ok' : 'glyphicon glyphicon-remove'); ?>"></span>
 			<span
 				class="short <?php if (!$item['Feed']['enabled'] || empty($ruleDescription)) echo "hidden"; ?>"
 				data-toggle="popover"
@@ -146,9 +146,9 @@ foreach ($feeds as $item):
 		<?php
 			if ($item['Feed']['source_format'] != 'misp'):
 		?>
-				<td><span class="<?php echo ($item['Feed']['publish'] ? 'icon-ok' : 'icon-remove'); ?>"></span></td>
-				<td><span class="<?php echo ($item['Feed']['delta_merge'] ? 'icon-ok' : 'icon-remove'); ?>"></span></td>
-				<td><span class="<?php echo ($item['Feed']['override_ids'] ? 'icon-ok' : 'icon-remove'); ?>"></span></td>
+				<td><span class="<?php echo ($item['Feed']['publish'] ? 'glyphicon glyphicon-ok' : 'glyphicon glyphicon-remove'); ?>"></span></td>
+				<td><span class="<?php echo ($item['Feed']['delta_merge'] ? 'glyphicon glyphicon-ok' : 'glyphicon glyphicon-remove'); ?>"></span></td>
+				<td><span class="<?php echo ($item['Feed']['override_ids'] ? 'glyphicon glyphicon-ok' : 'glyphicon glyphicon-remove'); ?>"></span></td>
 		<?php
 			else:
 		?>
@@ -170,7 +170,7 @@ foreach ($feeds as $item):
 			&nbsp;
 		<?php endif;?>
 		</td>
-		<td class="short"><span class="<?php echo ($item['Feed']['lookup_visible'] ? 'icon-ok' : 'icon-remove'); ?>"></span>
+		<td class="short"><span class="<?php echo ($item['Feed']['lookup_visible'] ? 'glyphicon glyphicon-ok' : 'glyphicon glyphicon-remove'); ?>"></span>
 		<td class="short action-links <?php echo !empty($item['Feed']['cache_timestamp']) ? 'bold' : 'bold red';?>">
 			<?php
 				if (!empty($item['Feed']['cache_timestamp'])):
@@ -192,20 +192,20 @@ foreach ($feeds as $item):
 				endif;
 				if ($item['Feed']['enabled']):
 			?>
-					<a href="<?php echo $baseurl;?>/feeds/cacheFeeds/<?php echo h($item['Feed']['id']); ?>" title="Cache feed"><span class="icon-download-alt"></span></a>
+					<a href="<?php echo $baseurl;?>/feeds/cacheFeeds/<?php echo h($item['Feed']['id']); ?>" title="Cache feed"><span class="glyphicon glyphicon-download-alt"></span></a>
 			<?php
 				endif;
 			?>
 		</td>
 		<td class="short action-links">
 			<?php
-				echo $this->Html->link('', array('action' => 'previewIndex', $item['Feed']['id']), array('class' => 'icon-search', 'title' => __('Explore the events remotely')));
+				echo $this->Html->link('', array('action' => 'previewIndex', $item['Feed']['id']), array('class' => 'glyphicon glyphicon-search', 'title' => __('Explore the events remotely')));
 				if (!isset($item['Feed']['event_error'])) {
-					if ($item['Feed']['enabled']) echo $this->Html->link('', array('action' => 'fetchFromFeed', $item['Feed']['id']), array('class' => 'icon-download', 'title' => __('Fetch all events')));
+					if ($item['Feed']['enabled']) echo $this->Html->link('', array('action' => 'fetchFromFeed', $item['Feed']['id']), array('class' => 'glyphicon glyphicon-download', 'title' => __('Fetch all events')));
 				}
 			?>
-			<a href="<?php echo $baseurl;?>/feeds/edit/<?php echo h($item['Feed']['id']); ?>"><span class="icon-edit" title="Edit">&nbsp;</span></a>
-			<?php echo $this->Form->postLink('', array('action' => 'delete', h($item['Feed']['id'])), array('class' => 'icon-trash', 'title' => __('Delete')), __('Are you sure you want to permanently remove the feed (%s)?', h($item['Feed']['name']))); ?>
+			<a href="<?php echo $baseurl;?>/feeds/edit/<?php echo h($item['Feed']['id']); ?>"><span class="glyphicon glyphicon-edit" title="Edit">&nbsp;</span></a>
+			<?php echo $this->Form->postLink('', array('action' => 'delete', h($item['Feed']['id'])), array('class' => 'glyphicon glyphicon-trash', 'title' => __('Delete')), __('Are you sure you want to permanently remove the feed (%s)?', h($item['Feed']['name']))); ?>
 			<a href="<?php echo $baseurl;?>/feeds/view/<?php echo h($item['Feed']['id']); ?>.json" title="<?php echo __('Download feed metadata as JSON');?>" download><span class="fa fa-cloud-download black"></span></a>
 		</td>
 	</tr><?php

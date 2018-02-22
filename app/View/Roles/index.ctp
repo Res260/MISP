@@ -4,7 +4,7 @@
 		<ul>
 		<?php
 		$this->Paginator->options(array(
-			'update' => '.span12',
+			'update' => '.col-md-12',
 			'evalScripts' => true,
 			'before' => '$(".progress").show()',
 			'complete' => '$(".progress").hide()',
@@ -33,11 +33,11 @@
 foreach ($list as $item): ?>
 	<tr>
 		<td class="short"><?php echo h($item['Role']['id']); ?>&nbsp;</td>
-		<td class="short" style="text-align:center;width:20px;"><div class="icon-<?php echo $default_role_id == $item['Role']['id'] ? __('ok') : __('remove') ?>"></div></td>
+		<td class="short" style="text-align:center;width:20px;"><div class="glyphicon glyphicon-<?php echo $default_role_id == $item['Role']['id'] ? __('ok') : __('remove') ?>"></div></td>
 		<td><?php echo h($item['Role']['name']); ?>&nbsp;</td>
 		<td class="short"><?php echo h($options[$item['Role']['permission']]); ?>&nbsp;</td>
 		<?php foreach ($permFlags as $k => $flags): ?>
-			<td class="short"><span class="<?php if ($item['Role'][$k]) echo 'icon-ok'; ?>"></span>&nbsp;</td>
+			<td class="short"><span class="<?php if ($item['Role'][$k]) echo 'glyphicon glyphicon-ok'; ?>"></span>&nbsp;</td>
 		<?php endforeach; ?>
 	</tr><?php
 endforeach; ?>

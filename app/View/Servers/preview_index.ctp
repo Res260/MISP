@@ -7,7 +7,7 @@
 			$eventViewURL = '/servers/previewEvent/' . h($id) . '/';
 			$this->Paginator->options(array(
 				'url' => $id,
-				'update' => '.span12',
+				'update' => '.col-md-12',
 				'evalScripts' => true,
 				'before' => '$(".progress").show()',
 				'complete' => '$(".progress").hide()',
@@ -30,7 +30,7 @@
 
 	<div class="tabMenuFixedContainer" style="display:inline-block;">
 		<span class="tabMenuFixed tabMenuFixed<?php echo $tab; ?> tabMenuSides">
-			<span id="create-button" title="<?php echo __('Modify filters');?>" role="button" tabindex="0" aria-label="<?php echo __('Modify filters');?>" class="icon-search useCursorPointer" onClick="getPopup('<?php echo h($urlparams);?>', 'servers', 'filterEventIndex/<?php echo h($id);?>');"></span>
+			<span id="create-button" title="<?php echo __('Modify filters');?>" role="button" tabindex="0" aria-label="<?php echo __('Modify filters');?>" class="glyphicon glyphicon-search useCursorPointer" onClick="getPopup('<?php echo h($urlparams);?>', 'servers', 'filterEventIndex/<?php echo h($id);?>');"></span>
 		</span>
 		<?php if ($filtered):
 			foreach ($passedArgsArray as $k => $v):?>
@@ -39,7 +39,7 @@
 				</span>
 			<?php endforeach; ?>
 		<span class="tabMenuFixed tabMenuFixedRight tabMenuSides">
-			<?php echo $this->Html->link('', '/servers/previewIndex/' . h($id), array('class' => 'icon-remove', 'title' => __('Remove filters')));?>
+			<?php echo $this->Html->link('', '/servers/previewIndex/' . h($id), array('class' => 'glyphicon glyphicon-remove', 'title' => __('Remove filters')));?>
 		</span>
 		<?php endif;?>
 		<span id="quickFilterButton" role="button" tabindex="0" aria-label="<?php echo __('Filter');?>" title="<?php echo __('Filter');?>" class="tabMenuFilterFieldButton useCursorPointer" onClick='quickFilterRemoteEvents(<?php echo h($passedArgs);?>, <?php echo h($id); ?>);'><?php echo __('Filter');?></span>
@@ -83,7 +83,7 @@
 		<?php if (!empty($events)) foreach ($events as $event): ?>
 		<tr <?php if ($event['Event']['distribution'] == 0) echo 'class = "privateRed"'?>>
 			<td class="short" ondblclick="document.location.href ='<?php echo $eventViewURL . h($event['Event']['id']);?>'">
-				<span class="icon-<?php echo ($event['Event']['published'] == 1) ? 'ok' : 'remove'; ?>" title="<?php echo __('Published');?>" aria-label="<?php echo __('Event ') . ($event['Event']['published'] == 1) ? '' : __('not ') . __('published'); ?>"></span>
+				<span class="glyphicon glyphicon-<?php echo ($event['Event']['published'] == 1) ? 'ok' : 'remove'; ?>" title="<?php echo __('Published');?>" aria-label="<?php echo __('Event ') . ($event['Event']['published'] == 1) ? '' : __('not ') . __('published'); ?>"></span>
 			</td>
 			<td class="short" ondblclick="document.location.href ='<?php echo $eventViewURL . h($event['Event']['id']);?>'">
 				<?php
@@ -144,8 +144,8 @@
 				?>
 			</td>
 			<td class="short action-links">
-				<?php if ($event['Event']['published']) echo $this->Form->postLink('', '/servers/pull/' . $server['Server']['id'] . '/' . $event['Event']['id'], array('class' => 'icon-download', 'title' => __('Fetch the event')), __('Are you sure you want to fetch and save this event on your instance?', $this->Form->value('Server.id'))); ?>
-				<a href='<?php echo $eventViewURL . h($event['Event']['id']);?>' class = "icon-list-alt" title = "<?php echo __('View');?>"></a>
+				<?php if ($event['Event']['published']) echo $this->Form->postLink('', '/servers/pull/' . $server['Server']['id'] . '/' . $event['Event']['id'], array('class' => 'glyphicon glyphicon-download', 'title' => __('Fetch the event')), __('Are you sure you want to fetch and save this event on your instance?', $this->Form->value('Server.id'))); ?>
+				<a href='<?php echo $eventViewURL . h($event['Event']['id']);?>' class = "glyphicon glyphicon-list-alt" title = "<?php echo __('View');?>"></a>
 			</td>
 		</tr>
 		<?php endforeach; ?>

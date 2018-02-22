@@ -44,8 +44,8 @@
 		$title = h($event['Event']['info']);
 		if (strlen($title) > 58) $title = substr($title, 0, 55) . '...';
 	?>
-	<div class="row-fluid">
-		<div class="span8">
+	<div class="row">
+		<div class="col-md-8">
 			<h2><?php echo nl2br($title); ?></h2>
 			<dl>
 				<dt><?php echo __('Event ID');?></dt>
@@ -169,7 +169,7 @@
 						<span id="eventSightingCount" class="bold sightingsCounter" data-toggle="popover" data-trigger="hover" data-content="<?php echo $sightingPopover; ?>"><?php echo count($event['Sighting']); ?></span>
 						(<span id="eventOwnSightingCount" class="green bold sightingsCounter" data-toggle="popover" data-trigger="hover" data-content="<?php echo $sightingPopover; ?>"><?php echo isset($ownSightings) ? count($ownSightings) : 0; ?></span>)
 						<?php if (!Configure::read('Plugin.Sightings_policy')) echo __('- restricted to own organisation only.'); ?>
-						<span class="icon-wrench useCursorPointer sightings_advanced_add" title="<?php echo __('Advanced Sightings');?>" role="button" tabindex="0" aria-label="<?php echo __('Advanced sightings');?>" data-object-id="<?php echo h($event['Event']['id']); ?>" data-object-context="event">&nbsp;</span>
+						<span class="glyphicon glyphicon-wrench useCursorPointer sightings_advanced_add" title="<?php echo __('Advanced Sightings');?>" role="button" tabindex="0" aria-label="<?php echo __('Advanced sightings');?>" data-object-id="<?php echo h($event['Event']['id']); ?>" data-object-context="event">&nbsp;</span>
 				</dd>
 				<dt><?php echo __('Activity');?></dt>
 				<dd>
@@ -225,7 +225,7 @@
 				?>
 			</dl>
 		</div>
-		<div class="related span4">
+		<div class="related col-md-4">
 			<?php
 				if (!empty($event['RelatedEvent'])):
 			?>
@@ -326,16 +326,16 @@
 	<br />
 	<div class="toggleButtons">
 		<button class="btn btn-inverse toggle-left btn.active qet galaxy-toggle-button" id="pivots_toggle" data-toggle-type="pivots">
-			<span class="icon-minus icon-white" title="<?php echo __('Toggle pivot graph');?>" role="button" tabindex="0" aria-label="<?php echo __('Toggle pivot graph');?>" style="vertical-align:top;"></span><?php echo __('Pivots');?>
+			<span class="glyphicon glyphicon-minus glyphicon glyphicon-white" title="<?php echo __('Toggle pivot graph');?>" role="button" tabindex="0" aria-label="<?php echo __('Toggle pivot graph');?>" style="vertical-align:top;"></span><?php echo __('Pivots');?>
 		</button>
 		<button class="btn btn-inverse toggle qet galaxy-toggle-button" id="galaxies_toggle" data-toggle-type="galaxies">
-			<span class="icon-minus icon-white" title="<?php echo __('Toggle galaxies');?>" role="button" tabindex="0" aria-label="<?php echo __('Toggle galaxies');?>" style="vertical-align:top;"></span><?php echo __('Galaxy');?>
+			<span class="glyphicon glyphicon-minus glyphicon glyphicon-white" title="<?php echo __('Toggle galaxies');?>" role="button" tabindex="0" aria-label="<?php echo __('Toggle galaxies');?>" style="vertical-align:top;"></span><?php echo __('Galaxy');?>
 		</button>
 		<button class="btn btn-inverse toggle qet galaxy-toggle-button" id="attributes_toggle" data-toggle-type="attributes">
-			<span class="icon-minus icon-white" title="<?php echo __('Toggle attributes');?>" role="button" tabindex="0" aria-label="<?php echo __('Toggle attributes');?>" style="vertical-align:top;"></span><?php echo __('Attributes');?>
+			<span class="glyphicon glyphicon-minus glyphicon glyphicon-white" title="<?php echo __('Toggle attributes');?>" role="button" tabindex="0" aria-label="<?php echo __('Toggle attributes');?>" style="vertical-align:top;"></span><?php echo __('Attributes');?>
 		</button>
 		<button class="btn btn-inverse toggle-right qet galaxy-toggle-button" id="discussions_toggle" data-toggle-type="discussions">
-			<span class="icon-minus icon-white" title="<?php echo __('Toggle discussions');?>" role="button" tabindex="0" aria-label="<?php echo __('Toggle discussions');?>" style="vertical-align:top;"></span><?php echo __('Discussion');?>
+			<span class="glyphicon glyphicon-minus glyphicon glyphicon-white" title="<?php echo __('Toggle discussions');?>" role="button" tabindex="0" aria-label="<?php echo __('Toggle discussions');?>" style="vertical-align:top;"></span><?php echo __('Discussion');?>
 		</button>
 	</div>
 	<br />

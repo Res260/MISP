@@ -5,7 +5,7 @@
 			<tr>
 				<td style="width:285px;">
 					<p><?php echo __('Available Organisations');?></p>
-					<select id="leftValues" size="5" multiple style="width:285px;">
+					<select class="form-control" id="leftValues" size="5" multiple style="width:285px;">
 						<?php
 							foreach ($orgs as $org) {
 								echo '<option value="' . h($org['id']) . '" selected>' . h($org['name']) . '</option>';
@@ -19,7 +19,7 @@
 				</td>
 				<td style="width:285px;">
 					<p><?php echo __('Added Organisations');?></p>
-					<select id="rightValues" size="5" multiple style="width:285px;"></select>
+					<select class="form-control" id="rightValues" size="5" multiple style="width:285px;"></select>
 				</td>
 			</tr>
 		</table>

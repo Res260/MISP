@@ -5,20 +5,20 @@
 		<div style="margin-left:10px;">
 			<span title="<?php echo isset($galaxy['description']) ? h($galaxy['description']) : h($galaxy['name']);?>" class="bold blue" style="font-size:14px;">
 				<?php echo h($galaxy['name']); ?>&nbsp;
-				<a href="<?php echo $baseurl; ?>/galaxies/view/<?php echo h($galaxy['id']); ?>" class="icon-search" title="View details about this galaxy"></a>
+				<a href="<?php echo $baseurl; ?>/galaxies/view/<?php echo h($galaxy['id']); ?>" class="glyphicon glyphicon-search" title="View details about this galaxy"></a>
 			</span>
 	<?php
 		foreach ($galaxy['GalaxyCluster'] as $cluster):
 	?>
 			<div style="margin-left:8px;">
 				<span class="bold blue expandable useCursorPointer"><span class="collapse-status" style="font-size: 16px;">+</span>&nbsp;<?php echo h($cluster['value']); ?></span>&nbsp;
-				<a href="<?php echo $baseurl; ?>/galaxy_clusters/view/<?php echo h($cluster['id']); ?>" class="icon-search" title="View details about this cluster"></a>&nbsp;
-				<a href="<?php echo $baseurl; ?>/events/index/searchtag:<?php echo h($cluster['tag_id']); ?>" class="icon-th-list" title="View all events containing this cluster."></a>
+				<a href="<?php echo $baseurl; ?>/galaxy_clusters/view/<?php echo h($cluster['id']); ?>" class="glyphicon glyphicon-search" title="View details about this cluster"></a>&nbsp;
+				<a href="<?php echo $baseurl; ?>/events/index/searchtag:<?php echo h($cluster['tag_id']); ?>" class="glyphicon glyphicon-th-list" title="View all events containing this cluster."></a>
 				<?php
 					if ($isSiteAdmin || ($mayModify && $isAclTagger)) {
 						echo $this->Form->postLink('',
 							$baseurl . '/galaxy_clusters/detachFromEvent/' . $event['Event']['id'] . '/' . $cluster['tag_id'],
-							array('class' => 'icon-trash', 'title' => 'Delete'),
+							array('class' => 'glyphicon glyphicon-trash', 'title' => 'Delete'),
 							__('Are you sure you want to detach %s from this event?', h($cluster['value']))
 						);
 					}
@@ -47,11 +47,11 @@
 						}
 						foreach ($cluster_fields as $cluster_field):
 					?>
-							<div class="row-fluid cluster_<?php echo h($cluster_field['key']); ?>">
-								<div class="span3 info_container_key">
+							<div class="row cluster_<?php echo h($cluster_field['key']); ?>">
+								<div class="col-md-3 info_container_key">
 									<?php echo h(ucfirst($cluster_field['key'])); ?>
 								</div>
-								<div class="span9 info_container_value">
+								<div class="col-md-9 info_container_value">
 									<?php
 										if (is_array($cluster_field['value'])) {
 											if ($cluster_field['key'] == 'refs') {

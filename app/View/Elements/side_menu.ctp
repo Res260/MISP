@@ -1,5 +1,5 @@
-<div class="actions <?php echo $debugMode;?> sideMenu">
-	<ul class="nav nav-list">
+<div id="sideMenu" class="actions <?php echo $debugMode;?> sideMenu">
+	<ul class="nav">
 		<?php
 			switch ($menuList) {
 				case 'event':

@@ -103,21 +103,21 @@
 </div>
 <div id="attributeList" class="attributeListContainer">
 	<div class="tabMenu tabMenuEditBlock noPrint">
-		<span id="create-button" title="Add attribute" role="button" tabindex="0" aria-label="Add attribute" class="icon-plus useCursorPointer" onClick="clickCreateButton(<?php echo $event['Event']['id']; ?>, '<?php echo $possibleAction; ?>');"></span>
-		<span id="multi-edit-button" title="Edit selected Attributes" role="button" tabindex="0" aria-label="Edit selected Attributes" class="hidden icon-edit mass-select useCursorPointer" onClick="editSelectedAttributes(<?php echo $event['Event']['id']; ?>);"></span>
-		<span id="multi-tag-button" title="Tag selected Attributes" role="button" tabindex="0" aria-label="Tag selected Attributes" class="hidden icon-tag mass-select useCursorPointer" onClick="getPopup('selected/true', 'tags', 'selectTaxonomy');"></span>
-		<span id="multi-delete-button" title="Delete selected Attributes" role="button" tabindex="0" aria-label="Delete selected Attributes" class="hidden icon-trash mass-select useCursorPointer" onClick="multiSelectAction(<?php echo $event['Event']['id']; ?>, 'deleteAttributes');"></span>
-		<span id="multi-accept-button" title="Accept selected Proposals" role="button" tabindex="0" aria-label="Accept selected Proposals" class="hidden icon-ok mass-proposal-select useCursorPointer" onClick="multiSelectAction(<?php echo $event['Event']['id']; ?>, 'acceptProposals');"></span>
-		<span id="multi-discard-button" title="Discard selected Proposals" role="button" tabindex="0" aria-label="Discard selected Proposals" class="hidden icon-remove mass-proposal-select useCursorPointer" onClick="multiSelectAction(<?php echo $event['Event']['id']; ?>, 'discardProposals');"></span>
-		<span id="multi-sighting-button" title="Sightings display for selected attributes" role="button" tabindex="0" aria-label="Sightings display for selected attributes" class="hidden icon-wrench mass-select useCursorPointer sightings_advanced_add" data-object-id="selected" data-object-context="attribute"></span>
+		<span id="create-button" title="Add attribute" role="button" tabindex="0" aria-label="Add attribute" class="glyphicon glyphicon-plus useCursorPointer" onClick="clickCreateButton(<?php echo $event['Event']['id']; ?>, '<?php echo $possibleAction; ?>');"></span>
+		<span id="multi-edit-button" title="Edit selected Attributes" role="button" tabindex="0" aria-label="Edit selected Attributes" class="hidden glyphicon glyphicon-edit mass-select useCursorPointer" onClick="editSelectedAttributes(<?php echo $event['Event']['id']; ?>);"></span>
+		<span id="multi-tag-button" title="Tag selected Attributes" role="button" tabindex="0" aria-label="Tag selected Attributes" class="hidden glyphicon glyphicon-tag mass-select useCursorPointer" onClick="getPopup('selected/true', 'tags', 'selectTaxonomy');"></span>
+		<span id="multi-delete-button" title="Delete selected Attributes" role="button" tabindex="0" aria-label="Delete selected Attributes" class="hidden glyphicon glyphicon-trash mass-select useCursorPointer" onClick="multiSelectAction(<?php echo $event['Event']['id']; ?>, 'deleteAttributes');"></span>
+		<span id="multi-accept-button" title="Accept selected Proposals" role="button" tabindex="0" aria-label="Accept selected Proposals" class="hidden glyphicon glyphicon-ok mass-proposal-select useCursorPointer" onClick="multiSelectAction(<?php echo $event['Event']['id']; ?>, 'acceptProposals');"></span>
+		<span id="multi-discard-button" title="Discard selected Proposals" role="button" tabindex="0" aria-label="Discard selected Proposals" class="hidden glyphicon glyphicon-remove mass-proposal-select useCursorPointer" onClick="multiSelectAction(<?php echo $event['Event']['id']; ?>, 'discardProposals');"></span>
+		<span id="multi-sighting-button" title="Sightings display for selected attributes" role="button" tabindex="0" aria-label="Sightings display for selected attributes" class="hidden glyphicon glyphicon-wrench mass-select useCursorPointer sightings_advanced_add" data-object-id="selected" data-object-context="attribute"></span>
 	</div>
 	<div class="tabMenu tabMenuToolsBlock noPrint">
 		<?php if ($mayModify): ?>
-			<span id="create-button" title="Populate using a template" role="button" tabindex="0" aria-label="Populate using a template" class="icon-list-alt useCursorPointer" onClick="getPopup(<?php echo $event['Event']['id']; ?>, 'templates', 'templateChoices');"></span>
+			<span id="create-button" title="Populate using a template" role="button" tabindex="0" aria-label="Populate using a template" class="glyphicon glyphicon-list-alt useCursorPointer" onClick="getPopup(<?php echo $event['Event']['id']; ?>, 'templates', 'templateChoices');"></span>
 		<?php endif; ?>
-		<span id="freetext-button" title="Populate using the freetext import tool" role="button" tabindex="0" aria-label="Populate using the freetext import tool" class="icon-exclamation-sign icon-inverse useCursorPointer" onClick="getPopup(<?php echo $event['Event']['id']; ?>, 'events', 'freeTextImport');"></span>
+		<span id="freetext-button" title="Populate using the freetext import tool" role="button" tabindex="0" aria-label="Populate using the freetext import tool" class="glyphicon glyphicon-exclamation-sign glyphicon glyphicon-inverse useCursorPointer" onClick="getPopup(<?php echo $event['Event']['id']; ?>, 'events', 'freeTextImport');"></span>
 		<?php if ($mayModify): ?>
-			<span id="attribute-replace-button" title="Replace all attributes of a category/type combination within the event" role="button" tabindex="0" aria-label="Replace all attributes of a category/type combination within the event" class="icon-random useCursorPointer" onClick="getPopup(<?php echo $event['Event']['id']; ?>, 'attributes', 'attributeReplace');"></span>
+			<span id="attribute-replace-button" title="Replace all attributes of a category/type combination within the event" role="button" tabindex="0" aria-label="Replace all attributes of a category/type combination within the event" class="glyphicon glyphicon-random useCursorPointer" onClick="getPopup(<?php echo $event['Event']['id']; ?>, 'attributes', 'attributeReplace');"></span>
 		<?php endif; ?>
 	</div>
 	<div class="tabMenu tabMenuFiltersBlock noPrint" style="padding-right:0px !important;">
@@ -135,9 +135,9 @@
 		<div id="show_context" title="Show attribute context fields" role="button" tabindex="0" aria-label="Show attribute context fields" class="attribute_filter_text" onClick="toggleContextFields();">Show context fields</div>
 		<div title="input filter" tabindex="0" aria-label="input filter" class="attribute_filter_text" style="padding-top:0px;">
 			<input type="text" id="attributesFilterField" style="height:20px;padding:0px;margin:0px;" class="form-control" data-eventid="<?php echo h($event['Event']['id']); ?>" value="<?php if ($filtered) echo h($passedArgsArray['all']); ?>"></input>
-				<span id="attributesFilterButton" role="button" class="icon-search" tabindex="0" aria-label="Filter on attributes value" onClick="filterAttributes('value', '<?php echo h($event['Event']['id']); ?>');"></span>
+				<span id="attributesFilterButton" role="button" class="glyphicon glyphicon-search" tabindex="0" aria-label="Filter on attributes value" onClick="filterAttributes('value', '<?php echo h($event['Event']['id']); ?>');"></span>
 				<?php if ($filtered):?>
-					<span tabindex="0" aria-label="Show all attributes" title="Remove filters" role="button" onClick="filterAttributes('all', '<?php echo h($event['Event']['id']); ?>');" class='icon-remove'></span>
+					<span tabindex="0" aria-label="Show all attributes" title="Remove filters" role="button" onClick="filterAttributes('all', '<?php echo h($event['Event']['id']); ?>');" class='glyphicon glyphicon-remove'></span>
 				<?php endif;?>
 		</div>
 	</div>

@@ -1,12 +1,12 @@
 <div class="Dashboard index">
 	<h2><?php echo __('Dashboard');?></h2>
 		<div class="row">
-			<div class="span3 dashboard_container">
+			<div class="col-md-3 dashboard_container">
 			<?php
 				echo $this->element('dashboard/dashboard_notifications');
 			?>
 			</div>
-			<div class="span3 dashboard_container">
+			<div class="col-md-3 dashboard_container">
 			<?php
 				echo $this->element('dashboard/dashboard_events');
 			?>

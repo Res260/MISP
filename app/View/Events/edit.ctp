@@ -43,7 +43,7 @@ $mayPublish = ($isAclPublish && $event['Event']['orgc_id'] == $me['org_id']);
 			'label' => __('Event Info'),
 			'div' => 'clear',
 			'type' => 'text',
-			'class' => 'form-control span6',
+			'class' => 'form-control col-md-6',
 			'placeholder' => __('Quick Event Description or Tracking Info')
 	));
 

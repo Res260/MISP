@@ -4,7 +4,7 @@
 		<ul>
 		<?php
 			$this->Paginator->options(array(
-				'update' => '.span12',
+				'update' => '.col-md-12',
 				'evalScripts' => true,
 				'before' => '$(".progress").show()',
 				'complete' => '$(".progress").hide()',
@@ -42,11 +42,11 @@
 				<?php
 				if ($event['Event']['published'] == 1) {
 				?>
-					<a href="<?php echo $baseurl."/events/view/".$event['Event']['id'] ?>" class = "icon-ok" title = "<?php echo __('View');?>"></a>
+					<a href="<?php echo $baseurl."/events/view/".$event['Event']['id'] ?>" class = "glyphicon glyphicon-ok" title = "<?php echo __('View');?>"></a>
 				<?php
 				} else {
 				?>
-					<a href="<?php echo $baseurl."/events/view/".$event['Event']['id'] ?>" class = "icon-remove" title = "<?php echo __('View');?>"></a>
+					<a href="<?php echo $baseurl."/events/view/".$event['Event']['id'] ?>" class = "glyphicon glyphicon-remove" title = "<?php echo __('View');?>"></a>
 				<?php
 				}?>&nbsp;
 			</td>

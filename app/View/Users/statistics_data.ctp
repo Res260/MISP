@@ -47,7 +47,7 @@
 <h3><?php echo __('Activity Heatmap');?></h3>
 <p><?php echo __('A heatmap showing user activity for each day during this month and the 4 months that preceded it. Use the buttons below to only show the heatmap of a specific organisation.');?></p>
 <div id="orgs">
-	<select onchange="updateCalendar(this.options[this.selectedIndex].value);">
+	<select class="form-control" onchange="updateCalendar(this.options[this.selectedIndex].value);">
 		<option value="all"><?php echo __('All organisations');?></option>
 		<?php
 			foreach ($orgs as $org):
@@ -62,13 +62,13 @@
 <table>
 <tr>
 <td style="vertical-align:top;">
-<div style="margin-right:5px;margin-top:40px;"><button id="goLeft" class="btn" onClick="goLeft();" title="<?php echo __('Go left');?>"><span class="icon-arrow-left"></span></button></div>
+<div style="margin-right:5px;margin-top:40px;"><button id="goLeft" class="btn" onClick="goLeft();" title="<?php echo __('Go left');?>"><span class="glyphicon glyphicon-arrow-left"></span></button></div>
 </td>
 <td>
 <div id="cal-heatmap"></div>
 </td>
 <td style="vertical-align:top;">
-<div style="margin-left:5px;margin-top:40px;"><button id="goRight" class="btn" onClick="goRight();" title="<?php echo __('Go right');?>"><span class="icon-arrow-right"></span></button></div>
+<div style="margin-left:5px;margin-top:40px;"><button id="goRight" class="btn" onClick="goRight();" title="<?php echo __('Go right');?>"><span class="glyphicon glyphicon-arrow-right"></span></button></div>
 </td>
 </tr>
 </table>

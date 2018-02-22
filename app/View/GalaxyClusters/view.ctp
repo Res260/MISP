@@ -2,8 +2,8 @@
 	echo $this->element('side_menu', array('menuList' => 'galaxies', 'menuItem' => 'view_cluster'));
 ?>
 <div class="galaxy view">
-	<div class="row-fluid">
-		<div class="span8">
+	<div class="row">
+		<div class="col-md-8">
 			<h2>
 				<?php echo isset($cluster['Galax']['name']) ? h($cluster['Galaxy']['name']) : h($cluster['GalaxyCluster']['type']) . ': ' . $cluster['GalaxyCluster']['value']; ?>
 			</h2>
@@ -46,8 +46,8 @@
 			</dl>
 		</div>
 	</div>
-	<div class="row-fluid">
-		<div id="elements_div" class="span8"></div>
+	<div class="row">
+		<div id="elements_div" class="col-md-8"></div>
 	</div>
 </div>
 <script type="text/javascript">

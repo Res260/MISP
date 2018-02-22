@@ -79,11 +79,11 @@
 			<?php
 			if ($event['Event']['published'] == 1) {
 			?>
-				<a href="<?php echo $baseurl."/events/view/".$event['Event']['id'] ?>" class = "icon-ok" title = "<?php echo __('View');?>"></a>
+				<a href="<?php echo $baseurl."/events/view/".$event['Event']['id'] ?>" class = "glyphicon glyphicon-ok" title = "<?php echo __('View');?>"></a>
 			<?php
 			} else {
 			?>
-				<a href="<?php echo $baseurl."/events/view/".$event['Event']['id'] ?>" class = "icon-remove" title = "<?php echo __('View');?>"></a>
+				<a href="<?php echo $baseurl."/events/view/".$event['Event']['id'] ?>" class = "glyphicon glyphicon-remove" title = "<?php echo __('View');?>"></a>
 			<?php
 			}?>&nbsp;
 		</td>
@@ -136,7 +136,7 @@
 						<span class="blue">
 							&nbsp;
 							<a href="<?php echo $baseurl; ?>/events/index/searchtag:<?php echo h($cluster['tag_id']); ?>"><?php echo h($cluster['value']); ?></a>
-							<a href="<?php echo $baseurl; ?>/galaxy_clusters/view/<?php echo h($cluster['id']); ?>" class="icon-search"></a>
+							<a href="<?php echo $baseurl; ?>/galaxy_clusters/view/<?php echo h($cluster['id']); ?>" class="glyphicon glyphicon-search"></a>
 						</span>
 					<?php
 					endforeach;
@@ -215,18 +215,18 @@
 		<td class="short action-links">
 			<?php
 				if (0 == $event['Event']['published'] && ($isSiteAdmin || ($isAclPublish && $event['Event']['orgc_id'] == $me['org_id'])))
-					echo $this->Form->postLink('', array('action' => 'alert', $event['Event']['id']), array('class' => 'icon-download-alt', 'title' => __('Publish Event'), __('Are you sure this event is complete and everyone should be informed?')));
+					echo $this->Form->postLink('', array('action' => 'alert', $event['Event']['id']), array('class' => 'glyphicon glyphicon-download-alt', 'title' => __('Publish Event'), __('Are you sure this event is complete and everyone should be informed?')));
 				else if (0 == $event['Event']['published']) echo __('Not published');
 
 				if ($isSiteAdmin || ($isAclModify && $event['Event']['user_id'] == $me['id']) || ($isAclModifyOrg && $event['Event']['orgc_id'] == $me['org_id'])):
 			?>
-					<a href='<?php echo $baseurl."/events/edit/".$event['Event']['id'];?>' class = "icon-edit" title = "<?php echo __('Edit');?>"></a>
+					<a href='<?php echo $baseurl."/events/edit/".$event['Event']['id'];?>' class = "glyphicon glyphicon-edit" title = "<?php echo __('Edit');?>"></a>
 			<?php
 
-					echo $this->Form->postLink('', array('action' => 'delete', $event['Event']['id']), array('class' => 'icon-trash', 'title' => __('Delete')), __('Are you sure you want to delete # %s?', $event['Event']['id']));
+					echo $this->Form->postLink('', array('action' => 'delete', $event['Event']['id']), array('class' => 'glyphicon glyphicon-trash', 'title' => __('Delete')), __('Are you sure you want to delete # %s?', $event['Event']['id']));
 				endif;
 			?>
-			<a href='<?php echo $baseurl."/events/view/".$event['Event']['id'];?>' class = "icon-list-alt" title = "<?php echo __('View');?>"></a>
+			<a href='<?php echo $baseurl."/events/view/".$event['Event']['id'];?>' class = "glyphicon glyphicon-list-alt" title = "<?php echo __('View');?>"></a>
 		</td>
 	</tr>
 	<?php endforeach; ?>

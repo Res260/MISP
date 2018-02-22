@@ -34,7 +34,7 @@
 		<tr>
 			<td class="short bold"><?php echo h($item['ObjectTemplateElement']['object_relation']); ?>&nbsp;</td>
       <td class="short"><?php echo h($item['ObjectTemplateElement']['type']); ?>&nbsp;</td>
-			<td class="short"><span class="icon-<?php echo $item['ObjectTemplateElement']['multiple'] ? 'ok' : 'remove'; ?>"></span></td>
+			<td class="short"><span class="glyphicon glyphicon-<?php echo $item['ObjectTemplateElement']['multiple'] ? 'ok' : 'remove'; ?>"></span></td>
       <td class="short"><?php echo h($item['ObjectTemplateElement']['ui-priority']); ?>&nbsp;</td>
       <td><?php echo h($item['ObjectTemplateElement']['description']); ?>&nbsp;</td>
       <?php
@@ -52,7 +52,7 @@
       <?php
         endforeach;
       ?>
-			<td class="short"><span class="icon-<?php echo empty($item['ObjectTemplateElement']['disable_correlation']) ? 'remove': 'ok'; ?>">&nbsp;</td>
+			<td class="short"><span class="glyphicon glyphicon-<?php echo empty($item['ObjectTemplateElement']['disable_correlation']) ? 'remove': 'ok'; ?>">&nbsp;</td>
 			<td class="short action-links">
 				&nbsp;
 			</td>

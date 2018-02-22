@@ -1,3 +1,9 @@
+<?php
+$myTemplates = [
+    'inputContainer' => '<div class="form-control">{{content}}</div>',
+];
+$this->Form->setTemplates('inputContainer.<div class="form-control">{{content}}</div>');
+?>
 <div style="width:100%;">
 	<?php
 		echo $this->Session->flash('auth');

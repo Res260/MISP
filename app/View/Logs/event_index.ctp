@@ -8,7 +8,7 @@ $mayPublish = ($isAclPublish && $event['Event']['orgc_id'] == $me['org_id']);
 		<ul>
 			<?php
 			$this->Paginator->options(array(
-				'update' => '.span12',
+				'update' => '.col-md-12',
 				'evalScripts' => true,
 				'before' => '$(".progress").show()',
 				'complete' => '$(".progress").hide()',

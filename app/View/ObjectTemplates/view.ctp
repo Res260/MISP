@@ -2,8 +2,8 @@
 	echo $this->element('side_menu', array('menuList' => 'objectTemplates', 'menuItem' => 'view'));
 ?>
 <div class="object_template view">
-	<div class="row-fluid">
-		<div class="span8">
+	<div class="row">
+		<div class="col-md-8">
 			<h2><?php echo h(ucfirst($template['ObjectTemplate']['name'])); ?><?php echo __(' Object Template');?></h2>
 			<dl>
 				<dt><?php echo __('Object Template ID');?></dt>

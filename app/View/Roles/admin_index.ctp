@@ -4,7 +4,7 @@
 		<ul>
 		<?php
 			$this->Paginator->options(array(
-				'update' => '.span12',
+				'update' => '.col-md-12',
 				'evalScripts' => true,
 				'before' => '$(".progress").show()',
 				'complete' => '$(".progress").hide()',
@@ -38,11 +38,11 @@ foreach ($list as $item): ?>
 		<td><?php echo h($item['Role']['name']); ?>&nbsp;</td>
 		<td><?php echo h($options[$item['Role']['permission']]); ?>&nbsp;</td>
 		<?php foreach ($permFlags as $k => $flags): ?>
-			<td class="short"><span class="<?php if ($item['Role'][$k]) echo 'icon-ok'; ?>"></span>&nbsp;</td>
+			<td class="short"><span class="<?php if ($item['Role'][$k]) echo 'glyphicon glyphicon-ok'; ?>"></span>&nbsp;</td>
 		<?php endforeach; ?>
 		<td class="short action-links">
-			<?php echo $this->Html->link('', array('admin' => true, 'action' => 'edit', $item['Role']['id']), array('class' => 'icon-edit', 'title' => 'Edit')); ?>
-			<?php echo $this->Form->postLink('', array('admin' => true, 'action' => 'delete', $item['Role']['id']), array('class' => 'icon-trash', 'title' => __('Delete')), __('Are you sure you want to delete %s?', $item['Role']['name'])); ?>
+			<?php echo $this->Html->link('', array('admin' => true, 'action' => 'edit', $item['Role']['id']), array('class' => 'glyphicon glyphicon-edit', 'title' => 'Edit')); ?>
+			<?php echo $this->Form->postLink('', array('admin' => true, 'action' => 'delete', $item['Role']['id']), array('class' => 'glyphicon glyphicon-trash', 'title' => __('Delete')), __('Are you sure you want to delete %s?', $item['Role']['name'])); ?>
 		</td>
 	</tr><?php
 endforeach; ?>

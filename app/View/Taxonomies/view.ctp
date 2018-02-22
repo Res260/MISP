@@ -44,7 +44,7 @@
 		else $url = array($id);
 		$this->Paginator->options(array(
 			'url' => $url,
-			'update' => '.span12',
+			'update' => '.col-md-12',
 			'evalScripts' => true,
 			'before' => '$(".progress").show()',
 			'complete' => '$(".progress").hide()',
@@ -59,7 +59,7 @@
 	 <div id="attributeList" class="attributeListContainer">
 		<div class="tabMenuFixedContainer">
 			<div class="tabMenu tabMenuEditBlock noPrint mass-select" style="float:left;top:-1px;">
-				<span id="multi-edit-button" title="Create / update selected tags" role="button" tabindex="0" aria-label="<?php echo __('Create and/or update selected tags');?>" class="icon-plus useCursorPointer" onClick="addSelectedTaxonomies(<?php echo $taxonomy['id']; ?>);"></span>
+				<span id="multi-edit-button" title="Create / update selected tags" role="button" tabindex="0" aria-label="<?php echo __('Create and/or update selected tags');?>" class="glyphicon glyphicon-plus useCursorPointer" onClick="addSelectedTaxonomies(<?php echo $taxonomy['id']; ?>);"></span>
 			</div>
 			<div style="float:right !important;overflow:hidden;border:0px;padding:0px;padding-right:200px;">
 					<input type="text" id="quickFilterField" class="tabMenuFilterField taxFilter" value="<?php echo h($filter);?>" /><span id="quickFilterButton" class="useCursorPointer taxFilterButton" onClick='quickFilterTaxonomy("<?php echo h($taxonomy['id']);?>");'><?php echo __('Filter');?></span>
@@ -139,12 +139,12 @@
 								echo $this->Form->input('taxonomy_id', array('type' => 'hidden', 'value' => $taxonomy['id']));
 								echo $this->Form->end();
 						?>
-								<span class="icon-refresh useCursorPointer" title="<?php echo __('Refresh');?>" role="button" tabindex="0" aria-label="<?php echo __('Refresh');?>" onClick="submitQuickTag('<?php echo 'quick_' . h($k); ?>');"></span>
-								<span class="icon-minus useCursorPointer" title="<?php echo __('Disable');?>" role="button" tabindex="0" aria-label="<?php echo __('Disable');?>" onClick="submitQuickTag('<?php echo 'quick_disable_' . h($k); ?>');"></span>
+								<span class="glyphicon glyphicon-refresh useCursorPointer" title="<?php echo __('Refresh');?>" role="button" tabindex="0" aria-label="<?php echo __('Refresh');?>" onClick="submitQuickTag('<?php echo 'quick_' . h($k); ?>');"></span>
+								<span class="glyphicon glyphicon-minus useCursorPointer" title="<?php echo __('Disable');?>" role="button" tabindex="0" aria-label="<?php echo __('Disable');?>" onClick="submitQuickTag('<?php echo 'quick_disable_' . h($k); ?>');"></span>
 						<?php
 							else:
 						?>
-								<span class="icon-plus useCursorPointer" title="<?php echo __('Enable');?>" role="button" tabindex="0" aria-label="<?php echo __('Refresh or enable');?>" onClick="submitQuickTag('<?php echo 'quick_' . h($k); ?>');"></span>
+								<span class="glyphicon glyphicon-plus useCursorPointer" title="<?php echo __('Enable');?>" role="button" tabindex="0" aria-label="<?php echo __('Refresh or enable');?>" onClick="submitQuickTag('<?php echo 'quick_' . h($k); ?>');"></span>
 						<?php
 							endif;
 							echo $this->Form->end();

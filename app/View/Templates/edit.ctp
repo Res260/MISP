@@ -37,7 +37,7 @@
 			'label' => __('Template Description'),
 			'div' => 'clear',
 			'type' => 'textarea',
-			'class' => 'form-control span6',
+			'class' => 'form-control col-md-6',
 			'placeholder' => __('A description of the template')
 		));
 		echo $this->Form->input('share', array(

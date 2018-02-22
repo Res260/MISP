@@ -4,7 +4,7 @@
 		<ul>
 		<?php
 		$this->Paginator->options(array(
-			'update' => '.span12',
+			'update' => '.col-md-12',
 			'evalScripts' => true,
 			'before' => '$(".progress").show()',
 			'complete' => '$(".progress").hide()',
@@ -38,14 +38,14 @@ foreach ($taxonomies as $item): ?>
 			<?php
 				if ($isSiteAdmin) {
 					if ($item['Taxonomy']['enabled']) {
-						echo $this->Form->postLink('', array('action' => 'disable', h($item['Taxonomy']['id'])), array('class' => 'icon-minus', 'title' => __('Disable')), (__('Are you sure you want to disable this taxonomy library?')));
+						echo $this->Form->postLink('', array('action' => 'disable', h($item['Taxonomy']['id'])), array('class' => 'glyphicon glyphicon-minus', 'title' => __('Disable')), (__('Are you sure you want to disable this taxonomy library?')));
 					} else {
-						echo $this->Form->postLink('', array('action' => 'enable', h($item['Taxonomy']['id'])), array('class' => 'icon-plus', 'title' => __('Enable')), (__('Are you sure you want to enable this taxonomy library?')));
+						echo $this->Form->postLink('', array('action' => 'enable', h($item['Taxonomy']['id'])), array('class' => 'glyphicon glyphicon-plus', 'title' => __('Enable')), (__('Are you sure you want to enable this taxonomy library?')));
 					}
 				}
 			?>
-			<a href='<?php echo $baseurl."/taxonomies/view/". h($item['Taxonomy']['id']);?>' class = "icon-list-alt" title = "<?php echo __('View');?>"></a>
-			<span class="icon-trash useCursorPointer" title="<?php echo __('Delete taxonomy');?>" role="button" tabindex="0" aria-label="<?php echo __('Delete taxonomy');?>" onClick="deleteObject('taxonomies', 'delete', '<?php echo h($item['Taxonomy']['id']); ?>', '<?php echo h($item['Taxonomy']['id']); ?>');"></span>
+			<a href='<?php echo $baseurl."/taxonomies/view/". h($item['Taxonomy']['id']);?>' class = "glyphicon glyphicon-list-alt" title = "<?php echo __('View');?>"></a>
+			<span class="glyphicon glyphicon-trash useCursorPointer" title="<?php echo __('Delete taxonomy');?>" role="button" tabindex="0" aria-label="<?php echo __('Delete taxonomy');?>" onClick="deleteObject('taxonomies', 'delete', '<?php echo h($item['Taxonomy']['id']); ?>', '<?php echo h($item['Taxonomy']['id']); ?>');"></span>
 		</td>
 	</tr><?php
 endforeach; ?>

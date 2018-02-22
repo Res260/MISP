@@ -33,7 +33,7 @@
 			<?php
 				echo h($data['jobCount']);
 				if ($data['jobCount'] > 0) {
-					echo $this->Form->postLink('<span class="icon-trash useCursorPointer"></span>', $baseurl . '/servers/clearWorkerQueue/' . h($type), array('escape' => false, 'inline' => true, 'style' => 'margin-left:2px;'));
+					echo $this->Form->postLink('<span class="glyphicon glyphicon-trash useCursorPointer"></span>', $baseurl . '/servers/clearWorkerQueue/' . h($type), array('escape' => false, 'inline' => true, 'style' => 'margin-left:2px;'));
 				}
 			?>
 		</span>
@@ -74,18 +74,18 @@
 				if (!$worker['correct_user']) {
 					$message = __('The worker was started with a user other than the apache user. MISP cannot check whether the worker is alive or not.');
 					$style = "color:white;background-color:red;";
-					$icon_modifier = ' icon-white';
+					$icon_modifier = ' glyphicon glyphicon-white';
 					$process = __('Unknown');
 				} else if ($worker['alive'] === 'N/A') {
 						$process = __('Unknown');
 						$message = __('Cannot check whether the worker is alive or dead.');
 						$style = "color:white;background-color:orange;";
-						$icon_modifier = ' icon-white';
+						$icon_modifier = ' glyphicon glyphicon-white';
 				} else if (!$worker['alive']) {
 					$process = __('Dead');
 					$message = __('The Worker appears to be dead.');
 					$style = "color:white;background-color:red;";
-					$icon_modifier = ' icon-white';
+					$icon_modifier = ' glyphicon glyphicon-white';
 				}
 
 				$status = '<span style="color:green;">OK</span>';
@@ -97,7 +97,7 @@
 			<td style="<?php echo $style; ?>"><?php echo $message; ?></td>
 			<td class="actions short" style="<?php echo $style; ?>">
 			<?php
-				echo $this->Form->postLink('', '/servers/stopWorker/' . h($worker['pid']), array('class' => 'icon-trash' . $icon_modifier, 'title' => __('Stop (if still running) and remove this worker. This will immediately terminate any jobs that are being executed by it.')));
+				echo $this->Form->postLink('', '/servers/stopWorker/' . h($worker['pid']), array('class' => 'glyphicon glyphicon-trash' . $icon_modifier, 'title' => __('Stop (if still running) and remove this worker. This will immediately terminate any jobs that are being executed by it.')));
 			?>
 			</td>
 		</tr>

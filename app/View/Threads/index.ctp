@@ -4,7 +4,7 @@
 		<ul>
 		<?php
 		$this->Paginator->options(array(
-			'update' => '.span12',
+			'update' => '.col-md-12',
 			'evalScripts' => true,
 			'before' => '$(".progress").show()',
 			'complete' => '$(".progress").hide()',
@@ -78,7 +78,7 @@ foreach ($threads as $thread):
 			</td>
 			<td class="short action-links">
 				<?php
-					echo $this->Html->link('', array('action' => 'view', $thread['Thread']['id']), array('class' => 'icon-list-alt', 'title' => __('View Discussion')));
+					echo $this->Html->link('', array('action' => 'view', $thread['Thread']['id']), array('class' => 'glyphicon glyphicon-list-alt', 'title' => __('View Discussion')));
 				?>
 			</td>
 		</tr>

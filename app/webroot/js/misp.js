@@ -2083,11 +2083,11 @@ function sharingGroupPopulateOrganisations() {
 			if (org.extend) html+= 'checked';
 			html += '></input>';
 		} else {
-			html += '<span class="icon-ok"></span>'
+			html += '<span class="glyphicon glyphicon-ok"></span>'
 		}
 		html +='</td>';
 		html += '<td class="actions short">';
-		if (org.removable == 1) html += '<span class="icon-trash" onClick="sharingGroupRemoveOrganisation(' + id + ')"></span>';
+		if (org.removable == 1) html += '<span class="glyphicon glyphicon-trash" onClick="sharingGroupRemoveOrganisation(' + id + ')"></span>';
 		html += '&nbsp;</td></tr>';
 		$('#organisations_table tr:last').after(html);
 		id++;
@@ -2109,7 +2109,7 @@ function sharingGroupPopulateServers() {
 		html += '></input>';
 		html +='</td>';
 		html += '<td class="actions short">';
-		if (server.removable == 1) html += '<span class="icon-trash" onClick="sharingGroupRemoveServer(' + id + ')"></span>';
+		if (server.removable == 1) html += '<span class="glyphicon glyphicon-trash" onClick="sharingGroupRemoveServer(' + id + ')"></span>';
 		html += '&nbsp;</td></tr>';
 		$('#servers_table tr:last').after(html);
 		id++;
@@ -2988,13 +2988,13 @@ function selectAllInbetween(last, current) {
 
 $('.galaxy-toggle-button').click(function() {
 	var element = $(this).data('toggle-type');
-	if ($(this).children('span').hasClass('icon-minus')) {
-		$(this).children('span').addClass('icon-plus');
-		$(this).children('span').removeClass('icon-minus');
+	if ($(this).children('span').hasClass('glyphicon glyphicon-minus')) {
+		$(this).children('span').addClass('glyphicon glyphicon-plus');
+		$(this).children('span').removeClass('glyphicon glyphicon-minus');
 		$('#' + element + '_div').hide();
 	} else {
-		$(this).children('span').removeClass('icon-plus');
-		$(this).children('span').addClass('icon-minus');
+		$(this).children('span').removeClass('glyphicon glyphicon-plus');
+		$(this).children('span').addClass('glyphicon glyphicon-minus');
 		$('#' + element + '_div').show();
 	}
 });

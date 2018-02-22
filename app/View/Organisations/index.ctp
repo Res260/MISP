@@ -33,7 +33,7 @@
 		<ul>
 			<?php
 				$this->Paginator->options(array(
-						'update' => '.span12',
+						'update' => '.col-md-12',
 						'evalScripts' => true,
 						'before' => '$(".progress").show()',
 						'complete' => '$(".progress").hide()',
@@ -114,12 +114,12 @@ foreach ($orgs as $org): ?>
 		</td>
 		<td class="short action-links">
 			<?php if ($isSiteAdmin): ?>
-				<a href='/admin/organisations/edit/<?php echo $org['Organisation']['id'];?>' class = "icon-edit" title = "<?php echo __('');?>Edit"></a>
+				<a href='/admin/organisations/edit/<?php echo $org['Organisation']['id'];?>' class = "glyphicon glyphicon-edit" title = "<?php echo __('');?>Edit"></a>
 				<?php
-					echo $this->Form->postLink('', array('admin' => true, 'action' => 'delete', $org['Organisation']['id']), array('class' => 'icon-trash', 'title' => __('Delete')), __('Are you sure you want to delete %s?', $org['Organisation']['name']));
+					echo $this->Form->postLink('', array('admin' => true, 'action' => 'delete', $org['Organisation']['id']), array('class' => 'glyphicon glyphicon-trash', 'title' => __('Delete')), __('Are you sure you want to delete %s?', $org['Organisation']['name']));
 				?>
 			<?php endif; ?>
-			<a href='/organisations/view/<?php echo $org['Organisation']['id']; ?>' class = "icon-list-alt" title = "<?php echo __('View');?>"></a>
+			<a href='/organisations/view/<?php echo $org['Organisation']['id']; ?>' class = "glyphicon glyphicon-list-alt" title = "<?php echo __('View');?>"></a>
 		</td>
 	</tr>
 	<?php

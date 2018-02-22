@@ -4,7 +4,7 @@
 		<ul>
 		<?php
 		$this->Paginator->options(array(
-			'update' => '.span12',
+			'update' => '.col-md-12',
 			'evalScripts' => true,
 			'before' => '$(".progress").show()',
 			'complete' => '$(".progress").hide()',
@@ -31,8 +31,8 @@ foreach ($list as $item):?>
 		<td><?php echo h($item['Regexp']['replacement']);?>&nbsp;</td>
 		<td class="short"><?php echo h($item['Regexp']['type']);?>&nbsp;</td>
 		<td class="short action-links">
-			<?php echo $this->Html->link('', array('admin' => true, 'action' => 'edit', $item['Regexp']['id']), array('class' => 'icon-edit', 'title' => 'Edit'));?>
-			<?php echo $this->Form->postLink('', array('admin' => true, 'action' => 'delete', $item['Regexp']['id']), array('class' => 'icon-trash', 'title' => 'Delete'), __('Are you sure you want to delete %s?', h($item['Regexp']['regexp'])));?>
+			<?php echo $this->Html->link('', array('admin' => true, 'action' => 'edit', $item['Regexp']['id']), array('class' => 'glyphicon glyphicon-edit', 'title' => 'Edit'));?>
+			<?php echo $this->Form->postLink('', array('admin' => true, 'action' => 'delete', $item['Regexp']['id']), array('class' => 'glyphicon glyphicon-trash', 'title' => 'Delete'), __('Are you sure you want to delete %s?', h($item['Regexp']['regexp'])));?>
 		</td>
 	</tr><?php
 endforeach;?>

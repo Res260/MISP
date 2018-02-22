@@ -4,7 +4,7 @@
 		<ul>
 		<?php
 		$this->Paginator->options(array(
-			'update' => '.span12',
+			'update' => '.col-md-12',
 			'evalScripts' => true,
 			'before' => '$(".progress").show()',
 			'complete' => '$(".progress").hide()',
@@ -33,7 +33,7 @@ foreach ($list as $item):?>
 		<td class="short"><?php echo h($item['Galaxy']['version']);?>&nbsp;</td>
 		<td><?php echo h($item['Galaxy']['description']);?>&nbsp;</td>
 		<td class="short action-links">
-			<?php echo $this->Html->link('', array('action' => 'view', $item['Galaxy']['id']), array('class' => 'icon-list-alt', 'title' => 'View'));?>
+			<?php echo $this->Html->link('', array('action' => 'view', $item['Galaxy']['id']), array('class' => 'glyphicon glyphicon-list-alt', 'title' => 'View'));?>
 		</td>
 	</tr><?php
 endforeach;?>

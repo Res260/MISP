@@ -5,8 +5,8 @@
 		$serverName = $server['Server']['name'] ? '"' . $server['Server']['name'] . '" (' . $server['Server']['url'] . ')' : '"' . $server['Server']['url'] . '"';
 	?>
 	<h4 class="visibleDL notPublished" ><?php echo __('You are currently viewing an event on the remote instance %s ', h($serverName));?></h4>
-	<div class="row-fluid">
-		<div class="span8">
+	<div class="row">
+		<div class="col-md-8">
 			<h2><?php echo nl2br(h($title)); ?></h2>
 			<dl>
 				<dt><?php echo __('Event ID');?></dt>
@@ -91,7 +91,7 @@
 			</dl>
 		</div>
 	<?php if (!empty($event['RelatedEvent'])):?>
-	<div class="related span4">
+	<div class="related col-md-4">
 		<h3><?php echo __('Related Events');?></h3>
 		<ul class="inline">
 			<?php foreach ($event['RelatedEvent'] as $relatedEvent):

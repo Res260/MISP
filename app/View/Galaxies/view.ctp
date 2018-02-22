@@ -1,9 +1,10 @@
+
 <?php
 	echo $this->element('side_menu', array('menuList' => 'galaxies', 'menuItem' => 'view'));
 ?>
 <div class="galaxy view">
-	<div class="row-fluid">
-		<div class="span8">
+	<div class="row">
+		<div class="col-md-8">
 			<h2>
 				<span class="fa fa-<?php echo h($galaxy['Galaxy']['icon']); ?>"></span>&nbsp;
 				<?php echo h($galaxy['Galaxy']['name']); ?> galaxy

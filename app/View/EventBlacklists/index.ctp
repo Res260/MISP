@@ -4,7 +4,7 @@
 		<ul>
 		<?php
 		$this->Paginator->options(array(
-			'update' => '.span12',
+			'update' => '.col-md-12',
 			'evalScripts' => true,
 			'before' => '$(".progress").show()',
 			'complete' => '$(".progress").hide()',
@@ -35,8 +35,8 @@ foreach ($response as $item): ?>
 		<td class="short"><?php echo (isset($item['EventBlacklist']['event_info']) ? h($item['EventBlacklist']['event_info']) : '&nbsp;'); ?></td>
 		<td class="short"><?php echo (isset($item['EventBlacklist']['comment']) ? h($item['EventBlacklist']['comment']) : '&nbsp;'); ?></td>
 		<td class="short action-links">
-			<a href="<?php echo $baseurl;?>/eventBlacklists/edit/<?php echo h($item['EventBlacklist']['id']); ?>"><span class="icon-edit" title="edit" role="button" tabindex="0" aria-label="Edit blacklist entry">&nbsp;</span></a>
-			<?php echo $this->Form->postLink('', array('action' => 'delete', h($item['EventBlacklist']['id'])), array('class' => 'icon-trash', 'title' => 'Delete'), __('Are you sure you want to delete the blacklist entry for the event UUID %s?', h($item['EventBlacklist']['event_uuid']))); ?>
+			<a href="<?php echo $baseurl;?>/eventBlacklists/edit/<?php echo h($item['EventBlacklist']['id']); ?>"><span class="glyphicon glyphicon-edit" title="edit" role="button" tabindex="0" aria-label="Edit blacklist entry">&nbsp;</span></a>
+			<?php echo $this->Form->postLink('', array('action' => 'delete', h($item['EventBlacklist']['id'])), array('class' => 'glyphicon glyphicon-trash', 'title' => 'Delete'), __('Are you sure you want to delete the blacklist entry for the event UUID %s?', h($item['EventBlacklist']['event_uuid']))); ?>
 		</td>
 	</tr><?php
 endforeach; ?>

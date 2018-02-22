@@ -18,6 +18,7 @@
 		echo $this->Form->input('distribution', array(
 				'options' => array($distributionLevels),
 				'label' => __('Distribution ') . $this->element('formInfo', array('type' => 'distribution')),
+				'class' => 'form-control',
 				'selected' => $initialDistribution,
 			));
 		?>
@@ -45,7 +46,7 @@
 					'label' => __('Event Info'),
 					'div' => 'clear',
 					'type' => 'text',
-					'class' => 'form-control span6',
+					'class' => 'form-control col-md-6',
 					'placeholder' => __('Quick Event Description or Tracking Info')
 				));
 		echo $this->Form->input('Event.submittedgfi', array(

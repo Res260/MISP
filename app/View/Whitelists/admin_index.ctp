@@ -5,7 +5,7 @@
 		<ul>
 		<?php
 			$this->Paginator->options(array(
-				'update' => '.span12',
+				'update' => '.col-md-12',
 				'evalScripts' => true,
 				'before' => '$(".progress").show()',
 				'complete' => '$(".progress").hide()',
@@ -28,8 +28,8 @@ foreach ($list as $item):?>
 		<td class="short"><?php echo h($item['Whitelist']['id']);?>&nbsp;</td>
 		<td><?php echo h($item['Whitelist']['name']);?>&nbsp;</td>
 		<td class="short action-links">
-			<?php echo $this->Html->link('', array('admin' => true, 'action' => 'edit', $item['Whitelist']['id']), array('class' => 'icon-edit', 'title' => 'Edit'));?>
-			<?php echo $this->Form->postLink('', array('admin' => true, 'action' => 'delete', $item['Whitelist']['id']), array('class' => 'icon-trash', 'title' => 'Delete'), __('Are you sure you want to delete "%s"?', $item['Whitelist']['name']));?>
+			<?php echo $this->Html->link('', array('admin' => true, 'action' => 'edit', $item['Whitelist']['id']), array('class' => 'glyphicon glyphicon-edit', 'title' => 'Edit'));?>
+			<?php echo $this->Form->postLink('', array('admin' => true, 'action' => 'delete', $item['Whitelist']['id']), array('class' => 'glyphicon glyphicon-trash', 'title' => 'Delete'), __('Are you sure you want to delete "%s"?', $item['Whitelist']['name']));?>
 		</td>
 	</tr><?php
 endforeach;?>

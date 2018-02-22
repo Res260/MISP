@@ -5,8 +5,8 @@
 	<div class="legend"><?php echo __('Merge Organisation');?></div>
 			<p class="red-background white"><?php echo __('Warning: Merging an organisation into another will be transfer all users and data belonging to the organisation to another.');?></p>
 	<div class="overlay_spacing bottomGap">
-		<div class="row-fluid">
-			<div class="span6">
+		<div class="row">
+			<div class="col-md-6">
 			<?php
 				$default_type = 0;
 				$default_id = 0;
@@ -24,7 +24,7 @@
 				));
 			?>
 			</div>
-			<div id="orgsLocal" class="span6" <?php echo $default_type == 1 ? 'style="display:none;"' : ''; ?>>
+			<div id="orgsLocal" class="col-md-6" <?php echo $default_type == 1 ? 'style="display:none;"' : ''; ?>>
 				<?php
 					$types = array('local', 'external');
 					echo $this->Form->input('orgsLocal', array(
@@ -37,7 +37,7 @@
 					));
 				?>
 			</div>
-			<div id="orgsExternal" class="span6" <?php echo $default_type == 0 ? 'style="display:none;"' : ''; ?>>
+			<div id="orgsExternal" class="col-md-6" <?php echo $default_type == 0 ? 'style="display:none;"' : ''; ?>>
 				<?php
 					echo $this->Form->input('orgsExternal', array(
 							'options' => $orgOptions['external'],
@@ -50,15 +50,15 @@
 				?>
 			</div>
 		</div>
-		<div class="row-fluid">
-			<div class="span6 highlightedBlock">
+		<div class="row">
+			<div class="col-md-6 highlightedBlock">
 				<b><?php echo __('Organisation to be merged');?></b><br />
 				<b><?php echo __('ID');?>: </b><span class="red"><?php echo h($currentOrg['Organisation']['id']);?></span><br />
 				<b><?php echo __('Name');?>: </b><span class="red"><?php echo h($currentOrg['Organisation']['name']);?></span><br />
 				<b><?php echo __('Uuid');?>: </b><span class="red"><?php echo h($currentOrg['Organisation']['uuid']);?></span><br />
 				<b><?php echo __('Type');?>: </b><span class="red"><?php echo h($currentOrg['Organisation']['local']) ? 'Local' : 'External';?></span>
 			</div>
-			<div class="span6 highlightedBlock">
+			<div class="col-md-6 highlightedBlock">
 				<b><?php echo __('Organisation to be merged into');?></b><br />
 				<b><?php echo __('ID');?>: </b><span id="org_id" class="green"></span><br />
 				<b><?php echo __('Name');?>: </b><span id="org_name" class="green"></span><br />

@@ -16,7 +16,7 @@ $requester = $me['org_id'] == $delegation['RequesterOrg']['id'] ? __('Your organ
 <?php endif;?>
 </p>
 <p><b><?php echo __('Message from requester');?></b><br /><?php echo h($delegation['EventDelegation']['message']); ?></p>
-	<div class="row-fluid">
+	<div class="row">
 		<?php if ($isSiteAdmin || $me['org_id'] == $delegation['Org']['id']):?>
 			<span role="button" tabindex="0" aria-label="<?php echo __('Accept delegation request');?>" title="<?php echo __('Accept delegation request');?>" class="btn btn-primary" onClick="genericPopup('<?php echo $baseurl?>/event_delegations/acceptDelegation/<?php echo h($delegation['EventDelegation']['id']); ?>', '#confirmation_box');"><?php echo __('Accept');?></span>
 		<?php endif;?>

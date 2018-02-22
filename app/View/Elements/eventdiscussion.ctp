@@ -86,18 +86,18 @@
 			<?php
 										if (!$isSiteAdmin) {
 											if ($post['user_id'] == $myuserid) {
-												echo $this->Html->link('', array('controller' => 'posts', 'action' => 'edit', h($post['id']), h($context)), array('class' => 'icon-edit', 'title' => 'Edit'));
-												echo $this->Form->postLink('', array('controller' => 'posts', 'action' => 'delete', h($post['id']), h($context)), array('class' => 'icon-trash', 'title' => 'Delete'), __('Are you sure you want to delete this post?'));
+												echo $this->Html->link('', array('controller' => 'posts', 'action' => 'edit', h($post['id']), h($context)), array('class' => 'glyphicon glyphicon-edit', 'title' => 'Edit'));
+												echo $this->Form->postLink('', array('controller' => 'posts', 'action' => 'delete', h($post['id']), h($context)), array('class' => 'glyphicon glyphicon-trash', 'title' => 'Delete'), __('Are you sure you want to delete this post?'));
 											} else {
 			?>
-												<a href="<?php echo $baseurl.'/posts/add/post/'.h($post['id']); ?>" class="icon-comment" title = "Reply"></a>
+												<a href="<?php echo $baseurl.'/posts/add/post/'.h($post['id']); ?>" class="glyphicon glyphicon-comment" title = "Reply"></a>
 			<?php
 											}
 										} else {
-											echo $this->Html->link('', array('controller' => 'posts', 'action' => 'edit', h($post['id']), h($context)), array('class' => 'icon-edit', 'title' => 'Edit'));
-											echo $this->Form->postLink('', array('controller' => 'posts', 'action' => 'delete', h($post['id']), h($context)), array('class' => 'icon-trash', 'title' => 'Delete'), __('Are you sure you want to delete this post?'));
+											echo $this->Html->link('', array('controller' => 'posts', 'action' => 'edit', h($post['id']), h($context)), array('class' => 'glyphicon glyphicon-edit', 'title' => 'Edit'));
+											echo $this->Form->postLink('', array('controller' => 'posts', 'action' => 'delete', h($post['id']), h($context)), array('class' => 'glyphicon glyphicon-trash', 'title' => 'Delete'), __('Are you sure you want to delete this post?'));
 			?>
-												<a href = "<?php echo $baseurl.'/posts/add/post/'.h($post['id']); ?>" class="icon-comment" title = "Reply"></a>
+												<a href = "<?php echo $baseurl.'/posts/add/post/'.h($post['id']); ?>" class="glyphicon glyphicon-comment" title = "Reply"></a>
 			<?php
 
 										}

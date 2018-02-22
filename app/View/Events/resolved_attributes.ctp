@@ -114,7 +114,7 @@
 
 					}
 				?>
-				<select id="<?php echo 'Attribute' . $k . 'Category'; ?>" style='padding:0px;height:20px;margin-bottom:0px;' class="categoryToggle">
+				<select class="form-control" id="<?php echo 'Attribute' . $k . 'Category'; ?>" style='padding:0px;height:20px;margin-bottom:0px;' class="categoryToggle">
 					<?php
 						foreach ($typeCategoryMapping[$item['default_type']] as $category) {
 							if (isset($item['categories']) && !in_array($category, $item['categories'])) {
@@ -139,7 +139,7 @@
 					}
 				?>
 				<div id = "<?php echo 'Attribute' . $k . 'TypeStatic'; ?>" <?php echo $divVisibility; ?> ><?php echo h($item['default_type']); ?></div>
-				<select id = "<?php echo 'Attribute' . $k . 'Type'; ?>" class='typeToggle' style='padding:0px;height:20px;margin-bottom:0px;<?php echo $selectVisibility; ?>'>
+				<select class="form-control" id = "<?php echo 'Attribute' . $k . 'Type'; ?>" class='typeToggle' style='padding:0px;height:20px;margin-bottom:0px;<?php echo $selectVisibility; ?>'>
 					<?php
 						if (!empty($item['types'])) {
 							foreach ($item['types'] as $type) {
@@ -154,7 +154,7 @@
 				<input type="checkbox" id="<?php echo 'Attribute' . $k . 'To_ids'; ?>" <?php if ($item['to_ids']) echo 'checked'; ?> class="idsCheckbox" />
 			</td>
 			<td class="short" style="width:40px;text-align:center;">
-				<select id = "<?php echo 'Attribute' . $k . 'Distribution'; ?>" class='distributionToggle' style='padding:0px;height:20px;margin-bottom:0px;'>
+				<select class="form-control" id = "<?php echo 'Attribute' . $k . 'Distribution'; ?>" class='distributionToggle' style='padding:0px;height:20px;margin-bottom:0px;'>
 					<?php
 						foreach ($distributions as $distKey => $distValue) {
 							$default = isset($item['distribution']) ? $item['distribution'] : $instanceDefault;
@@ -164,7 +164,7 @@
 					?>
 				</select>
 				<div style="display:none;">
-					<select id = "<?php echo 'Attribute' . $k . 'SharingGroupId'; ?>" class='sgToggle' style='padding:0px;height:20px;margin-top:3px;margin-bottom:0px;'>
+					<select class="form-control" id = "<?php echo 'Attribute' . $k . 'SharingGroupId'; ?>" class='sgToggle' style='padding:0px;height:20px;margin-top:3px;margin-bottom:0px;'>
 						<?php
 							foreach ($sgs as $sgKey => $sgValue) {
 								echo '<option value="' . $sgKey . '">' . $sgValue . '</option>';
@@ -180,7 +180,7 @@
 				<input type="text" class="freetextTagField" id="<?php echo 'Attribute' . $k . 'Tags'; ?>" style="padding:0px;height:20px;margin-bottom:0px;"<?php if (isset($item['tags']) && $item['tags'] !== false) echo 'value="' . htmlspecialchars(implode(",",$item['tags'])) . '"'?>/>
 			</td>
 			<td class="action short">
-				<span class="icon-remove pointer" title="<?php echo __('Remove resolved attribute');?>" role="button" tabindex="0" aria-label="<?php echo __('Remove resolved attribute');?>" onClick="freetextRemoveRow('<?php echo $k; ?>', '<?php echo $event['Event']['id']; ?>');"></span>
+				<span class="glyphicon glyphicon-remove pointer" title="<?php echo __('Remove resolved attribute');?>" role="button" tabindex="0" aria-label="<?php echo __('Remove resolved attribute');?>" onClick="freetextRemoveRow('<?php echo $k; ?>', '<?php echo $event['Event']['id']; ?>');"></span>
 			</td>
 		</tr>
 	<?php
@@ -202,7 +202,7 @@
 			<?php
 				if (!empty($optionsRearranged)):
 			?>
-				<select id="changeFrom" style="margin-left:50px;margin-top:10px;">
+				<select class="form-control" id="changeFrom" style="margin-left:50px;margin-top:10px;">
 					<?php
 						foreach (array_keys($optionsRearranged) as $fromElement):
 					?>
@@ -211,8 +211,8 @@
 						endforeach;
 					?>
 				</select>
-				<span class="icon-arrow-right"></span>
-				<select id="changeTo" style="margin-top:10px;">
+				<span class="glyphicon glyphicon-arrow-right"></span>
+				<select class="form-control" id="changeTo" style="margin-top:10px;">
 					<?php
 						$keys = array_keys($optionsRearranged);
 						foreach ($optionsRearranged[$keys[0]] as $toElement):

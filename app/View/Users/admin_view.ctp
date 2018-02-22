@@ -23,7 +23,7 @@ $buttonModifyStatus = $mayModify ? 'button_on':'button_off';
 		</dd>
 		<dt><?php echo __('Email'); ?></dt>
 		<dd>
-			<?php echo h($user['User']['email']); ?>&nbsp;<a class="icon-envelope" href="<?php echo $baseurl; ?>/admin/users/quickEmail/<?php echo h($user['User']['id']); ?>"></a>
+			<?php echo h($user['User']['email']); ?>&nbsp;<a class="glyphicon glyphicon-envelope" href="<?php echo $baseurl; ?>/admin/users/quickEmail/<?php echo h($user['User']['id']); ?>"></a>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Autoalert'); ?></dt>
@@ -55,7 +55,7 @@ $buttonModifyStatus = $mayModify ? 'button_on':'button_off';
 				foreach ($user['User']['orgAdmins'] as $orgAdminId => $orgAdminEmail):
 			?>
 					<a href="<?php echo $baseurl; ?>/admin/users/view/<?php echo h($orgAdminId); ?>"><?php echo h($orgAdminEmail); ?></a>
-					<a class="icon-envelope" href="<?php echo $baseurl; ?>/admin/users/quickEmail/<?php echo h($orgAdminId); ?>"></a>
+					<a class="glyphicon glyphicon-envelope" href="<?php echo $baseurl; ?>/admin/users/quickEmail/<?php echo h($orgAdminId); ?>"></a>
 			<?php
 				if ($orgAdminEmail !== end($user['User']['orgAdmins'])) {
 					echo '<br />';

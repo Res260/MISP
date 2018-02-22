@@ -3,8 +3,8 @@
 		<fieldset>
 			<legend><?php echo __('Add Object Reference'); ?></legend>
 				<div class="overlay_spacing">
-					<div class="row-fluid">
-						<div class="span6">
+					<div class="row">
+						<div class="col-md-6">
 							<?php
 								echo $this->Form->input('relationship_type_select', array(
 									'label' => __('Relationship type'),
@@ -24,7 +24,7 @@
 								?>
 							</div>
 						</div>
-						<div class="span6">
+						<div class="col-md-6">
 							<?php
 								echo $this->Form->input('comment', array(
 									'label' => __('Comment'),
@@ -35,8 +35,8 @@
 						</div>
 					</div>
 					<div class="input clear"></div>
-					<div class="row-fluid">
-						<div class="span6">
+					<div class="row">
+						<div class="col-md-6">
 							<?php
 								echo $this->Form->input('referenced_uuid', array(
 									'label' => __('Target UUID'),
@@ -45,7 +45,7 @@
 								));
 							?>
 							<br />
-							<select id="targetSelect" size="10" style="width:100%;height:200px;">
+							<select class="form-control" id="targetSelect" size="10" style="width:100%;height:200px;">
 								<?php
 									if (!empty($event['Object'])):
 										foreach ($event['Object'] as $object):
@@ -64,7 +64,7 @@
 								?>
 							</select>
 						</div>
-						<div class="span6">
+						<div class="col-md-6">
 							<label for="selectedData"><?php echo __('Target Details');?></label>
 							<div class="redHighlightedBlock" id="targetData">
 								&nbsp;
