@@ -19,11 +19,8 @@ class Tag extends AppModel {
 	public $validate = array(
 			'name' => array(
 					'required' => array(
-						'required' => true,
+						'rule' => array('notBlank', 'name'),
 						'message' => 'This field is required.'
-					),
-					'valueNotEmpty' => array(
-						'rule' => array('valueNotEmpty', 'name'),
 					),
 					'unique' => array(
 							'rule' => 'isUnique',
